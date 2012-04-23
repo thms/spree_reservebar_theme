@@ -1,0 +1,11 @@
+<% if store_menu? %>
+  <li id="link-to-cart" data-hook><%= link_to_cart %></li>
+<% end %>
+<li id="search-bar" data-hook>
+<%= form_tag products_url, :method => :get do %>
+  <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search) %>
+  <%= submit_tag t(:search), :name => nil %>
+<% end %>
+</li>
+
+
