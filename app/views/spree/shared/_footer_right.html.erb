@@ -1,9 +1,3 @@
 <%= reverse_taxons_tree(Spree::Taxonomy.find_by_name('Type').root, @taxon, 1) %>
 <hr />
-<ul>
-	<li>Site Map</li>
-	<li>FAQ</li>
-	<li>Terms of Use</li>
-	<li>Return Policy</li>
-	<li>Privacy Policy</li>
-</ul>
+<%= render :partial => 'spree/shared/main_menu' %>
