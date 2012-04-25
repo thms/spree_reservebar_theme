@@ -53,7 +53,7 @@ div#top-menu > ul > li > ul {
 
 /* add spacer in between top level list to make spacing equal */
 div#top-menu > ul > li {padding-right:0px;}
-div#top-menu > ul > li:after {content:'';display:inline-block;width:37px;}
+div#top-menu > ul > li:after {content:'';display:inline-block;width:27px;}
 div#top-menu > ul > li:last-child:after {width:0px;}
 div#top-menu > ul > li:last-child {float:right;}
 

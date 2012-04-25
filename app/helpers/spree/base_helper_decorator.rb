@@ -17,9 +17,7 @@ Spree::BaseHelper.class_eval do
     separator = raw(separator)
     crumbs = []
     if taxon
-      ancestors = taxon.ancestors
-      ancestors.pop
-      crumbs << ancestors.collect { |ancestor| content_tag(:li, link_to(ancestor.name , seo_url(ancestor)) + separator) } unless ancestors.empty?
+      crumbs << taxon.ancestors.collect { |ancestor| content_tag(:li, link_to(ancestor.name , seo_url(ancestor)) + separator) } unless taxon.ancestors.empty?
       crumbs << content_tag(:li, content_tag(:span, link_to(taxon.name , seo_url(taxon))))
     end
     crumb_list = content_tag(:ul, raw(crumbs.flatten.map{|li| li.mb_chars}.join), :class => 'inline')
