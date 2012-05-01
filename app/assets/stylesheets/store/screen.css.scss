@@ -873,6 +873,11 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   /* Account
   /*--------------------------------------*/
   #existing-customer, #new-customer, #forgot-password {
+  	margin:40px auto;
+  	width:400px;
+  }
+  
+  #existing-customer, #new-customer, #forgot-password {
     h6 {
       text-transform: uppercase;
     }
