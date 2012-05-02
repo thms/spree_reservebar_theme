@@ -5,5 +5,137 @@
 		<li id="link-to-admin" data-hook><%= link_to "Admin", admin_path %></li>
 	<% end %>
 <% else %>
-  <li id="link-to-login"><%= link_to t(:login), spree.login_path %></li>
+  <li id="link-to-login"><%= link_to t(:login), "", :id => "create-user" %></li>
+	<style>
+		#dialog-form #existing-customer, #dialog-form #new-customer, #dialog-form #forgot-password {margin:20px auto;}
+		#dialog-form .ui-icon {display:inline;}
+		#dialog-form input.text { margin-bottom:12px; width:95%; padding: .4em; }
+		#dialog-form fieldset { padding:0; border:0; margin-top:25px; }
+		#dialog-form h1 { font-size: 1.2em; margin: .6em 0; }
+		#dialog-form p {}
+		#dialog-form div#users-contain { width: 450px; margin: 20px 0; }
+		#dialog-form div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+		#dialog-form div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+		#dialog-form .ui-dialog .ui-state-error { padding: .3em; }
+		#dialog-form .validateTips { border: 1px solid transparent; padding: 0.3em; }
+	</style>
+	<script>
+	$(function() {
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+		
+		var name = $( "#name" ),
+			email = $( "#email" ),
+			password = $( "#password" ),
+			allFields = $( [] ).add( name ).add( email ).add( password ),
+			tips = $( ".validateTips" );
+
+		function updateTips( t ) {
+			tips
+				.text( t )
+				.addClass( "ui-state-highlight" );
+			setTimeout(function() {
+				tips.removeClass( "ui-state-highlight", 1500 );
+			}, 500 );
+		}
+
+		function checkLength( o, n, min, max ) {
+			if ( o.val().length > max || o.val().length < min ) {
+				o.addClass( "ui-state-error" );
+				updateTips( "Length of " + n + " must be between " +
+					min + " and " + max + "." );
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		function checkRegexp( o, regexp, n ) {
+			if ( !( regexp.test( o.val() ) ) ) {
+				o.addClass( "ui-state-error" );
+				updateTips( n );
+				return false;
+			} else {
+				return true;
+			}
+		}
+		
+		$( "#dialog-form" ).dialog({
+			autoOpen: false,
+			height: 550,
+			width: 500,
+			modal: true,
+			title: ""
+		});
+
+		$( "#create-user" )
+			.click(function() {
+				$( "#dialog-form" ).dialog( "open" );
+			});
+	});
+	</script>
+	<div id="dialog-form" title="Login or Signup">
+		<% if flash[:alert] %>
+			<div class="flash errors"><%= flash[:alert] %></div>
+		<% end %>
+
+		<div id="existing-customer">
+			<h6>Returning Customer</h6>
+			<p>Welcome back to Reservebar. Please sign into your account below.</p>
+			<div data-hook="login">
+				<%= form_for :user, :url => spree.user_session_path do |f| %>
+					<div id="password-credentials">
+						<div>
+							<%= f.label :email, t(:email) %><br />
+							<%= f.email_field :email, :class => 'title', :tabindex => 1 %>
+						</div>
+						<div>
+							<%= f.label :password, t(:password) %><br />
+							<%= f.password_field :password, :class => 'title', :tabindex => 2 %>
+						</div>
+					</div>
+					<div>
+						<label>
+							<%= f.check_box :remember_me %>
+							<%= f.label :remember_me, t(:remember_me) %>
+						</label>
+					</div>
+					<p>
+						<%= f.submit t(:login), :class => 'button primary' %>
+						<%= t(:or) %> <%= link_to t(:forgot_password), spree.new_user_password_path %>
+					</p>
+				<% end %>
+			</div>
+		</div>
+	
+		<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+		<div id="new-customer">
+			<h6><%= t(:new_customer) %></h6>
+			<div data-hook="signup">
+				<%= form_for :user, :url => spree.user_registration_path(@user) do |f| %>
+				  <div data-hook="signup_inside_form">
+				    <div>
+							<%= f.label :email, t(:email) %><br />
+							<%= f.email_field :email, :class => 'title' %>
+						</div>
+						<div id="password-credentials">
+							<div>
+								<%= f.label :password, t(:password) %><br />
+								<%= f.password_field :password, :class => 'title' %>
+							</div>
+
+							<div>
+								<%= f.label :password_confirmation, t(:confirm_password) %><br />
+								<%= f.password_field :password_confirmation, :class => 'title' %>
+							</div>
+						</div>
+
+						<div data-hook="signup_below_password_fields"></div>
+				    <p><%= f.submit t(:create), :class => 'button primary' %></p>
+				  </div>
+				<% end %>
+			</div>
+		</div>
+		<div data-hook="login_extras"></div>
+	</div>
 <% end %>
