@@ -86,3 +86,11 @@ footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-col
 
 /* hide the taxons in the side bar by brute force for now */
 div#wrapper #taxonomies {display:none;}
+
+/* recommendations */
+#recommendations {clear:both;border-top:4px double $dark-grey;padding-top:12px;}
+.recommendations-title {clear:both;font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
+
+/* main product image */
+#product-images #main-image {border:none;}
+#product-images #main-image img {height:500px;}

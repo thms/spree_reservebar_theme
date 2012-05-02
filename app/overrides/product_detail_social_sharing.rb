@@ -3,3 +3,5 @@ Deface::Override.new(:virtual_path => "spree/products/show",
 	                   :insert_before => "div#wishlist-form",
 	                   :partial => "spree/hooks/social_bookmarks",
 	                   :disabled => false)
+	                   
+                     
