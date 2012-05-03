@@ -3,11 +3,15 @@
 Deface::Override.new(:virtual_path => "spree/products/show",
                      :name => "product_reviews_short_ratings",
                      :insert_before => "div#bookmarks",
+                     :sequence => {:after => "product_detail_social_sharing"},
                      :partial => "spree/shared/shortrating",
-                     :disabled => false)
+                     :disabled => true)
 
 Deface::Override.new(:virtual_path => "spree/products/show",
                      :name => "converted_product_properties_767643482",
                      :insert_after => "[data-hook='product_recommendations']",
-                     :partial => "spree/shared/reviews",
+                     :sequence => {:after => "store_product_recommendations"},
+                     :partial => "spree/shared/reviews_full",
                      :disabled => false)
+
+

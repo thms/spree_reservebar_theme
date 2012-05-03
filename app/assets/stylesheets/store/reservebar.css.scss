@@ -87,10 +87,23 @@ footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-col
 /* hide the taxons in the side bar by brute force for now */
 div#wrapper #taxonomies {display:none;}
 
-/* recommendations */
-#recommendations {clear:both;border-top:4px double $dark-grey;padding-top:12px;}
-.recommendations-title {clear:both;font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
+/* recommendations & reviews */
+#recommendations, #reviews {clear:both;border-top:4px double $dark-grey;padding-top:12px;}
+.recommendations-title, .reviews-title {clear:both;font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
+
+#reviews div.star-rating, #reviews div.star-rating a, div.ratings div.star-rating, div.ratings div.star-rating a {
+  background: url('/assets/star-red.gif') no-repeat 0 0px
+}
 
 /* main product image */
 #product-images #main-image {border:none;}
 #product-images #main-image img {height:500px;}
+
+#cart-form {height:150px;}
+
+/* Properties */
+table#product-properties {margin-top:24px;border:none;}
+table#product-properties tr.odd, table#product-properties tr.even {background:none;}
+
+/* silder */
+div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:none;left:315px;}

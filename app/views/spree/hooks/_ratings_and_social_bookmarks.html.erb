@@ -1,0 +1,13 @@
+<div>
+<% stars = @product.stars %>
+<% reviews_count = @product.reviews_count %>
+<div class="ratings" style="margin-right:12px;float:left;width:200px;">
+	<span style="float:left;">Rating:&nbsp;&nbsp;</span>
+	<span style="float:left;" title="<%= txt_stars(stars) %>">
+  		<%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
+	</span>
+</div>
+
+<%= display_bookmarks %>
+
+<div>
