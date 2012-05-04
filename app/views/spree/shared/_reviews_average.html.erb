@@ -1,0 +1,10 @@
+<% stars = product.stars %>
+<% reviews_count = product.reviews_count %>
+<div class="ratings">
+	<span style="float:left;" title="<%= txt_stars(stars) %>">
+  		<%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
+	</span>
+	<span style="float:right;">
+  		<%= Spree::Review.model_name.human(:count => reviews_count) %>
+	</span>
+</div>

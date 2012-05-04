@@ -30,8 +30,8 @@ nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.pn
 #search-bar {margin-top:32px;}
 
 /* top-menu */
-div#top-menu {border-bottom:4px double $dark_grey;height:24px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
-div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:24px;}
+div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
+div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
 div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
 div#top-menu > ul > li > a {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
 div#top-menu > ul > li > ul {visibility:hidden;position:absolute;left:0px;padding:12px;font-size:12px;width:956px;}
@@ -50,9 +50,13 @@ div#top-menu > ul > li > ul {
 	column-gap: 20px;
 	
 }
-
+div#top-menu > ul > li > ul > li {
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+}
 /* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {padding-right:0px;}
+div#top-menu > ul > li {padding-right:0px;height:22px;}
 div#top-menu > ul > li:after {content:'';display:inline-block;width:27px;}
 div#top-menu > ul > li:last-child:after {width:0px;}
 div#top-menu > ul > li:last-child {float:right;}
@@ -79,3 +83,28 @@ footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-col
 
 /* Product details */
 #product-details span.price {font-size:72px;line-height:72px;}
+
+/* hide the taxons in the side bar by brute force for now */
+div#wrapper #taxonomies {display:none;}
+
+/* recommendations & reviews */
+#recommendations, #reviews {clear:both;border-top:4px double $dark-grey;padding-top:12px;}
+.recommendations-title, .reviews-title {clear:both;font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
+
+#reviews div.star-rating, #reviews div.star-rating a, div.ratings div.star-rating, div.ratings div.star-rating a {
+  background: url('/assets/star-red.gif') no-repeat 0 0px
+}
+
+/* main product image */
+#product-images #main-image {border:none;}
+#product-images #main-image img {max-height:500px;}
+
+#cart-form {height:150px;}
+
+/* Properties */
+table#product-properties {margin-top:24px;border:none;}
+table#product-properties tr.odd, table#product-properties tr.even {background:none;}
+
+/* silder */
+div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:none;left:315px;}
+div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
