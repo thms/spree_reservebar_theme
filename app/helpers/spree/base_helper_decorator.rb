@@ -15,9 +15,11 @@ Spree::BaseHelper.class_eval do
   def short_breadcrumbs(taxon, separator="&nbsp;&raquo;&nbsp;")
     return "" if current_page?("/") || taxon.nil?
     separator = raw(separator)
-    crumbs = []
+    crumbs = [content_tag(:li, link_to(t(:home) , root_path) + separator)]
     if taxon
-      crumbs << taxon.ancestors.collect { |ancestor| content_tag(:li, link_to(ancestor.name , seo_url(ancestor)) + separator) } unless taxon.ancestors.empty?
+      ancestors = taxon.ancestors
+      ancestors.delete_at(0) if ancestors.first.name == 'Type'
+      crumbs << ancestors.collect { |ancestor| content_tag(:li, link_to(ancestor.name , seo_url(ancestor)) + separator)} unless ancestors.empty?
       crumbs << content_tag(:li, content_tag(:span, link_to(taxon.name , seo_url(taxon))))
     end
     crumb_list = content_tag(:ul, raw(crumbs.flatten.map{|li| li.mb_chars}.join), :class => 'inline')
