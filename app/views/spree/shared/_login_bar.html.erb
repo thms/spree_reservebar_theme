@@ -78,12 +78,14 @@
 		<% if flash[:alert] %>
 			<div class="flash errors"><%= flash[:alert] %></div>
 		<% end %>
-
+		
+		<% protocol = Rails.env.development? ? 'http' : 'https' %>
+		
 		<div id="existing-customer">
 			<h6>Returning Customer</h6>
 			<p>Welcome back to Reservebar. Please sign into your account below.</p>
 			<div data-hook="login">
-				<%= form_for :user, :url => spree.user_session_path do |f| %>
+				<%= form_for :user, :url => spree.user_session_url(:protocol => protocol) do |f| %>
 					<div id="password-credentials">
 						<div>
 							<%= f.label :email, t(:email) %><br />
@@ -112,7 +114,7 @@
 		<div id="new-customer">
 			<h6><%= t(:new_customer) %></h6>
 			<div data-hook="signup">
-				<%= form_for :user, :url => spree.user_registration_path(@user) do |f| %>
+				<%= form_for :user, :url => spree.user_registration_url(@user, :protocol => protocol) do |f| %>
 				  <div data-hook="signup_inside_form">
 				    <div>
 							<%= f.label :email, t(:email) %><br />
