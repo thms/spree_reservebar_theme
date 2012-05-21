@@ -30,7 +30,7 @@ nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.pn
 #search-bar {margin-top:32px;}
 
 /* top-menu */
-div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:1;margin-bottom:12px;clear:both;width:100%;}
+div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
 div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
 div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
 div#top-menu > ul > li > a {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
@@ -108,3 +108,6 @@ table#product-properties tr.odd, table#product-properties tr.even {background:no
 /* silder */
 div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:none;left:315px;}
 div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
+
+/* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
+#keywords {z-index:100;}
