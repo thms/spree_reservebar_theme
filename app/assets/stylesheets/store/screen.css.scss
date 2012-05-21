@@ -9,6 +9,7 @@ $title_text_color:          #593d2b;
 $body_text_color:           #593d2b;
 $link_text_color:           #593d2b;
 $link_hover_color:			#D34C2F;
+$button_background_color:   #EF1C23;
 
 $product_background_color:  #FFFFFF;
 $product_title_text_color:  #D34C2F;
@@ -210,14 +211,17 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 
   input[type="submit"], input[type="button"],
   input[type= "reset"], button, a.button {
-    background-color: $link_text_color;;
-    background-image: none;
+/* ToDo: Asset url */
+	background: $button_background_color url("arrow.gif") no-repeat right center;
+	padding:3px 24px 3px 10px;
+
+
     text-shadow: none;
     color: $layout_background_color;
     font-weight: bold;
     font-size: $button_font_size;
     font-family: $ff_base;
-    border: 1px solid rgba(0, 138, 189, .75);
+    border: 1px solid #EF1C23;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
      -khtml-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
@@ -237,8 +241,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     }
 
     &:hover {
-      background-image: none;
-      background-color: $body_text_color;
+      background: $button_background_color url("arrow.gif") no-repeat right center;
       border-color: $body_text_color;
       color: $layout_background_color !important;
     }
@@ -256,6 +259,11 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     vertical-align: middle;
   }
 
+ input.large[type="submit"], 	
+ input.large[type="button"], input.large[type="reset"], 
+ button.large, a.button.large {
+   padding-right:24px;
+ }
   a.button {
     display: inline-block;
     line-height: 15px;
