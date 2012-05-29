@@ -1,0 +1,40 @@
+<style>
+	#minicart-dialog .ui-icon {display:inline;}
+	#minicart-dialog a.button {color:#fff;}
+	#minicart-dialog div.price {font-size:36px;line-height:36px;color:#aaa;font-weight:bold}
+	#minicart-dialog div.price:first-letter {font-size:28px;vertical-align:super;}
+</style>
+
+<script>
+$(function() {
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$("#minicart-dialog").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 500,
+		modal: true,
+		title: ""
+	});
+
+});
+</script>
+<div id="minicart-dialog">
+	<h2>Thank You for Adding to Your Cart!</h2>
+	<div class="product-image" style="float:left;width:180px;margin-top:24px;">
+  		<%= product_image(@product, :itemprop => "name", :style => "float:right;text-decoration:none;" ) %>
+	</div>
+	<div style="float:left;margin-top:54px;width:240px;">
+		<h3><%= @product.name %></h3>
+		<%= truncate @product.description, :length => 160, :separator => ' ' %><br />
+		<% stars = @product.stars %>
+  		<%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
+		<div class="price selling" itemprop="price"><%= number_to_currency @product.price %></div>
+	</div>
+	<div class="clearfix"></div>
+	<div style="margin:24px auto auto 160px;">
+		<%= link_to t(:continue_shopping), 'javascript:$("#minicart-dialog").dialog("close")', :class => 'button large' %><br /><br />
+    	<%= link_to t(:checkout), checkout_path, :class => 'button large', :id => 'checkout-link' %>
+	</div>
+</div>

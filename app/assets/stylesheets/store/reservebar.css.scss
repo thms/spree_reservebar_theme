@@ -82,7 +82,9 @@ footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-col
 
 
 /* Product details */
-#product-details span.price {font-size:72px;line-height:72px;}
+#product-details span.price {font-size:72px;line-height:72px;display:block;}
+#product-details span.price:first-letter {font-size:40px;vertical-align:super;}
+
 
 /* hide the taxons in the side bar by brute force for now */
 div#wrapper #taxonomies {display:none;}
@@ -111,3 +113,13 @@ div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
 #keywords {z-index:100;}
+
+/* minicart styling*/
+div#minicart {background-color:#eeeeee;z-index:200;}
+
+/* Modal dialogs */
+div.ui-dialog-titlebar {border:none;background:none;}
+#minicart-dialog a.button {color:#fff;}
+#minicart-dialog a {text-decoration:none;}
+#minicart-dialog div.star-rating, #minicart-dialog div.star-rating a {background: url('/assets/star-red.gif') no-repeat 0 0px}
+

@@ -1,0 +1,14 @@
+// Refresh minicart count
+$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>');
+
+// Refresh minicart line items
+$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>');
+
+// Sliding down minicart
+$("#minicart-dialog").dialog('open');
+
+// Sliding up minicart
+setTimeout(function () {
+  $("#minicart-dialog").dialog('close');
+},
+5000);
