@@ -119,7 +119,23 @@ div#minicart {background-color:#eeeeee;z-index:200;}
 
 /* Modal dialogs */
 div.ui-dialog-titlebar {border:none;background:none;}
+div.ui-dialog .dialog-content {background-color:#f1f1f1;}
 #minicart-dialog a.button {color:#fff;}
 #minicart-dialog a {text-decoration:none;}
 #minicart-dialog div.star-rating, #minicart-dialog div.star-rating a {background: url('/assets/star-red.gif') no-repeat 0 0px}
 
+/* shipping methods on checkout delivery page */
+fieldset#shipping_method label {float:none;display:block;}
+
+/* whishlist, gift packaging, whiskey of the month styling on product page */
+#wishlist-form a, .gift-options-available a, .whiskey-of-the-month a {vertical-align:top;height:34px;line-height:34px;}
+#wishlist-form span, .gift-options-available span, .whiskey-of-the-month span {height:34px;width:34px;display:inline-block;}
+#wishlist-form span {background:url(product-sprite.png) no-repeat 0 0;}
+#wishlist-form:hover span {background:url(product-sprite.png) no-repeat 0 -35px;}
+#wishlist-form {margin-top:0px;}
+
+.gift-options-available span {background:url(product-sprite.png) no-repeat -34px 0;}
+.gift-options-available:hover span {background:url(product-sprite.png) no-repeat -34px -35px;}
+
+.whiskey-of-the-month span {background:url(product-sprite.png) no-repeat -68px 0;}
+.whiskey-of-the-month:hover span {background:url(product-sprite.png) no-repeat -68px -35px;}
