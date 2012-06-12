@@ -3,6 +3,8 @@ $light-grey: #d0c7c2;
 $dark-grey: #593d2b;
 $red: #D34C2F;
 $blue: #63B8D6;
+$link_text_color:           #593d2b;
+$link_hover_color:			#D34C2F;
 
 $ff_base:       'Frutiger', sans-serif;
 $ff_serif:       'MrsEaves', serif;
@@ -139,3 +141,12 @@ fieldset#shipping_method label {float:none;display:block;}
 
 .whiskey-of-the-month span {background:url(product-sprite.png) no-repeat -68px 0;}
 .whiskey-of-the-month:hover span {background:url(product-sprite.png) no-repeat -68px -35px;}
+
+/* Hide until functionality is built */
+.whiskey-of-the-month {display:none;}
+
+/* wishlists */
+div#wishlist_header h1, #wishlist_header div {float:none;}
+.footer_links {margin-top:24px;}
+table#wishlist a, table#wishlist input[type="submit"] {background:none;border:none;color:$link_text_color;}
+table#wishlist a:hover, table#wishlist input[type="submit"]:hover {color:$link_hover_color;}

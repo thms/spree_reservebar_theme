@@ -1,0 +1,86 @@
+<div id="wishlist_header" class="row">
+  <h1><%= @wishlist.name %></h1>
+  <% if @wishlist.user == current_user %>
+    <div id="manage_wishlist_links">
+      <%= link_to t(:edit_wishlist), edit_wishlist_path(@wishlist), :class => 'button' %>
+    </div>
+    <div>This wishlist is <%= render :partial => 'accessibility' %></div>
+  <% end -%>
+</div>
+<table id="wishlist">
+  <thead>
+    <tr>
+      <th><%= t(:item_view) %></th>
+      <th><%= t(:item_description) %></th>
+      <th><%= t(:availability) %></th>
+      <th><%= t(:date_added) %></th>
+      <th><%= t(:price) %></th>
+      <% if @wishlist.user == current_user %>
+        <th width=150><%= t(:wishlist_actions) %></th>
+      <% end -%>
+    </tr>
+  </thead>
+  <tbody id="line_items">
+  <% if @wishlist.wished_products.size > 0 %>
+    <% @wishlist.wished_products.each do |wish|
+        variant = wish.variant
+        product = variant.product %>
+    <tr class="<%= cycle('', 'alt') %>">
+      <td>
+        <% if variant.images.length == 0 %>
+          <%= small_image(variant.product) %>
+        <% else %>
+          <%= image_tag variant.images.first.attachment.url(:small) %>
+        <% end %>
+      </td>
+      <td>
+        <h4><%= link_to product.name, product %></h4>
+        <p><%= variant_options variant %></p>
+        <%= truncate(product.description, :length => 100, :omission => "...") %>
+      </td>
+      <td>
+        <%= variant.in_stock? ? t(:in_stock) : t(:out_of_stock) %>
+      </td>
+      <td>
+        <%= wish.created_at.strftime "%m/%d/%Y" %>
+      </td>
+      <td>
+        <%= number_to_currency(variant.price) %>
+      </td>
+
+    <% if @wishlist.user == current_user %>
+      <td>
+        <p><%= link_to t(:remove_from_wishlist), wish, :method => :delete %></p>
+        <%= form_for :order, :url => populate_orders_url do |f| %>
+          <%= hidden_field_tag "variants[#{variant.id}]", 1, :size => 3 %>
+          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;" %>
+        <% end %>
+        <% if current_user.wishlists.count > 1 %>
+          <%= t(:move_to_another_wishlist) %>:
+          <%= form_for wish do |f| %>
+            <%= f.select :wishlist_id, current_user.wishlists.map{|wl| [wl.name, wl.id]} %>
+            <%= f.submit t(:move) %>
+          <% end %>
+        <% end %>
+        <br />
+      </td>
+    <% end -%>
+
+    </tr>
+    <% end -%>
+  <% else -%>
+    <tr>
+      <td colspan="6"><%= t(:your_wishlist_is_empty) %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+<div class="footer_links" data-hook="wishlist_footer_links">
+<% if @wishlist.user == current_user %>
+  <%= link_to t(:create_new_wishlist), new_wishlist_path, :class => "button" %>
+<% end -%>
+<%= link_to t(:continue_shopping), products_path, :class => "button" %>
+<% if respond_to?(:email_to_friend_url) %>
+  <%= link_to t('email_to_friend.send_to_friend'), email_to_friend_url('wishlist', @wishlist), :class => "button" %>
+<% end %>
+</div>
