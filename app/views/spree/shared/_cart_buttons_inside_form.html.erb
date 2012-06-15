@@ -1,0 +1,11 @@
+<div class="links columns ten alpha" data-hook="cart_buttons" style="text-align:right;">
+
+   <%= link_to(t(:empty_cart), empty_cart_path, :method => :put, :class => 'button') %>
+
+  <%= button_tag :class => 'primary', :id => 'update-button' do %>
+    <%= t(:update) %>
+  <% end %>
+</div>
+
+
+

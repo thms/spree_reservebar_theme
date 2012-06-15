@@ -6,8 +6,8 @@ $blue: #63B8D6;
 $link_text_color:           #593d2b;
 $link_hover_color:			#D34C2F;
 
-$ff_base:       'Frutiger', sans-serif;
-$ff_serif:       'MrsEaves', serif;
+$ff_base:        'Lato', sans-serif;
+$ff_serif:       'Crimson Text', serif;
 
 
 body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
@@ -59,7 +59,7 @@ div#top-menu > ul > li > ul > li {
 }
 /* add spacer in between top level list to make spacing equal */
 div#top-menu > ul > li {padding-right:0px;height:22px;}
-div#top-menu > ul > li:after {content:'';display:inline-block;width:27px;}
+div#top-menu > ul > li:after {content:'';display:inline-block;width:22px;}
 div#top-menu > ul > li:last-child:after {width:0px;}
 div#top-menu > ul > li:last-child {float:right;}
 
@@ -78,7 +78,7 @@ footer#footer {background-color:#e5e4e0;padding:4px;font-size:12px;height:58px;}
 div#footer-left ul, div#footer-right ul {list-style:none;margin:4px;height:14px;}
 div#footer-left ul li {float:left;padding-right:8px;}
 div#footer-right ul li {float:right;padding-left:8px;text-transform:uppercase;font-family:$ff_serif;}
-div#footer-right {float:right;width:530px;}
+div#footer-right {float:right;width:600px;}
 footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-color:$light-grey;width:98%;}
 
 
@@ -87,6 +87,8 @@ footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-col
 #product-details span.price {font-size:72px;line-height:72px;display:block;}
 #product-details span.price:first-letter {font-size:40px;vertical-align:super;}
 
+/* Hide similar items */
+#taxon-crumbs {display:none;}
 
 /* hide the taxons in the side bar by brute force for now */
 div#wrapper #taxonomies {display:none;}
@@ -150,3 +152,11 @@ div#wishlist_header h1, #wishlist_header div {float:none;}
 .footer_links {margin-top:24px;}
 table#wishlist a, table#wishlist input[type="submit"] {background:none;border:none;color:$link_text_color;}
 table#wishlist a:hover, table#wishlist input[type="submit"]:hover {color:$link_hover_color;}
+
+
+/* checkout forms */
+form.edit_spree_order .form-buttons {clear:both;margin-top:24px;}
+#checkout-summary {margin-top:34px;}
+fieldset#shipping {position:relative;}
+fieldset#shipping .checkbox {position:absolute;top:15px;}
+#gift_form legend {color:$dark-grey;}
