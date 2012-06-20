@@ -9,7 +9,8 @@ $title_text_color:          #593d2b;
 $body_text_color:           #593d2b;
 $link_text_color:           #593d2b;
 $link_hover_color:			#D34C2F;
-$button_background_color:   #EF1C23;
+$button_background_color:   #ff3333;
+$button_background_hover_color:   #b50000;
 
 $product_background_color:  #FFFFFF;
 $product_title_text_color:  #D34C2F;
@@ -21,27 +22,29 @@ $product_link_text_color:   #D34C2F;
 /*--------------------------------------*/
 /* Fonts import from remote
 /*--------------------------------------*/
-
+/*
 @font-face{ 
 	font-family: 'MrsEaves';
 	src: url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.eot');
 	src: url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.eot?#iefix') format('embedded-opentype'),
 	     url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.woff') format('woff');
 }
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato|Crimson+Text);
 
+/*
 @font-face{ 
 	font-family: 'Frutiger';
 	src: url('/assets/fonts/frutiger.eot');
 	src: url('/assets/fonts/frutiger.eot?#iefix') format('embedded-opentype'),
 	     url('/assets/fonts/frutiger.woff') format('woff');
 }
-
+*/
 /*--------------------------------------*/
 /* Font families
 /*--------------------------------------*/
-
-$ff_base:       'Frutiger', sans-serif;
-$ff_serif:       'MrsEaves', serif;
+$ff_base:        'Lato', sans-serif;
+$ff_serif:       'Crimson Text', serif;
 
 /*--------------------------------------
   | Font sizes
@@ -193,7 +196,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   select {
     border: 1px solid lighten($body_text_color, 10);
     font-family: $ff_base;
-    background-image: url('select_arrow.gif');
+    background-image: url('select_arrow.png');
     background-repeat: no-repeat;
     background-position: right center;
 
@@ -211,8 +214,11 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 
   input[type="submit"], input[type="button"],
   input[type= "reset"], button, a.button {
-    background: $button_background_color url("arrow.gif") no-repeat right center;
-    padding:3px 24px 3px 10px;
+
+/* ToDo: Asset url */
+	background: $button_background_color url("arrow.png") no-repeat right center;
+	padding:3px 24px 3px 10px;
+
     text-shadow: none;
     color: $layout_background_color;
     font-weight: bold;
@@ -238,7 +244,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     }
 
     &:hover {
-      background: $button_background_color url("arrow.gif") no-repeat right center;
+      background: $button_background_hover_color url("arrow.png") no-repeat right center;
       border-color: $body_text_color;
       color: $layout_background_color !important;
     }
@@ -255,13 +261,12 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   button, label {
     vertical-align: middle;
   }
-	
-	input.large[type="submit"], 
-	input.large[type="button"], input.large[type="reset"], 
-	button.large, a.button.large {
-		padding-right:24px;
-	}
-	
+
+ input.large[type="submit"], 	
+ input.large[type="button"], input.large[type="reset"], 
+ button.large, a.button.large {
+   padding-right:24px;
+ }
   a.button {
     display: inline-block;
     line-height: 15px;

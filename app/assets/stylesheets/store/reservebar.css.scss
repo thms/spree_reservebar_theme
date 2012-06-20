@@ -3,9 +3,11 @@ $light-grey: #d0c7c2;
 $dark-grey: #593d2b;
 $red: #D34C2F;
 $blue: #63B8D6;
+$link_text_color:           #593d2b;
+$link_hover_color:			#D34C2F;
 
-$ff_base:       'Frutiger', sans-serif;
-$ff_serif:       'MrsEaves', serif;
+$ff_base:        'Lato', sans-serif;
+$ff_serif:       'Crimson Text', serif;
 
 
 body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
@@ -30,7 +32,7 @@ nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.pn
 #search-bar {margin-top:32px;}
 
 /* top-menu */
-div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:1;margin-bottom:12px;clear:both;width:100%;}
+div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
 div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
 div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
 div#top-menu > ul > li > a {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
@@ -57,7 +59,7 @@ div#top-menu > ul > li > ul > li {
 }
 /* add spacer in between top level list to make spacing equal */
 div#top-menu > ul > li {padding-right:0px;height:22px;}
-div#top-menu > ul > li:after {content:'';display:inline-block;width:27px;}
+div#top-menu > ul > li:after {content:'';display:inline-block;width:22px;}
 div#top-menu > ul > li:last-child:after {width:0px;}
 div#top-menu > ul > li:last-child {float:right;}
 
@@ -76,13 +78,17 @@ footer#footer {background-color:#e5e4e0;padding:4px;font-size:12px;height:58px;}
 div#footer-left ul, div#footer-right ul {list-style:none;margin:4px;height:14px;}
 div#footer-left ul li {float:left;padding-right:8px;}
 div#footer-right ul li {float:right;padding-left:8px;text-transform:uppercase;font-family:$ff_serif;}
-div#footer-right {float:right;width:530px;}
+div#footer-right {float:right;width:600px;}
 footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-color:$light-grey;width:98%;}
 
 
 
 /* Product details */
-#product-details span.price {font-size:72px;line-height:72px;}
+#product-details span.price {font-size:72px;line-height:72px;display:block;}
+#product-details span.price:first-letter {font-size:40px;vertical-align:super;}
+
+/* Hide similar items */
+#taxon-crumbs {display:none;}
 
 /* hide the taxons in the side bar by brute force for now */
 div#wrapper #taxonomies {display:none;}
@@ -111,5 +117,48 @@ div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* autocomplete */
 
-/* checkout */
-hr.space {clear:both;}
+/* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
+#keywords {z-index:100;}
+
+/* minicart styling*/
+div#minicart {background-color:#eeeeee;z-index:200;}
+
+/* Modal dialogs */
+div.ui-dialog-titlebar {border:none;background:none;}
+div.ui-dialog .dialog-content {background-color:#f1f1f1;}
+#minicart-dialog a.button {color:#fff;}
+#minicart-dialog a {text-decoration:none;}
+#minicart-dialog div.star-rating, #minicart-dialog div.star-rating a {background: url('/assets/star-red.gif') no-repeat 0 0px}
+
+/* shipping methods on checkout delivery page */
+fieldset#shipping_method label {float:none;display:block;}
+
+/* whishlist, gift packaging, whiskey of the month styling on product page */
+#wishlist-form a, .gift-options-available a, .whiskey-of-the-month a {vertical-align:top;height:34px;line-height:34px;}
+#wishlist-form span, .gift-options-available span, .whiskey-of-the-month span {height:34px;width:34px;display:inline-block;}
+#wishlist-form span {background:url(product-sprite.png) no-repeat 0 0;}
+#wishlist-form:hover span {background:url(product-sprite.png) no-repeat 0 -35px;}
+#wishlist-form {margin-top:0px;}
+
+.gift-options-available span {background:url(product-sprite.png) no-repeat -34px 0;}
+.gift-options-available:hover span {background:url(product-sprite.png) no-repeat -34px -35px;}
+
+.whiskey-of-the-month span {background:url(product-sprite.png) no-repeat -68px 0;}
+.whiskey-of-the-month:hover span {background:url(product-sprite.png) no-repeat -68px -35px;}
+
+/* Hide until functionality is built */
+.whiskey-of-the-month {display:none;}
+
+/* wishlists */
+div#wishlist_header h1, #wishlist_header div {float:none;}
+.footer_links {margin-top:24px;}
+table#wishlist a, table#wishlist input[type="submit"] {background:none;border:none;color:$link_text_color;}
+table#wishlist a:hover, table#wishlist input[type="submit"]:hover {color:$link_hover_color;}
+
+
+/* checkout forms */
+form.edit_spree_order .form-buttons {clear:both;margin-top:24px;}
+#checkout-summary {margin-top:34px;}
+fieldset#shipping {position:relative;}
+fieldset#shipping .checkbox {position:absolute;top:15px;}
+#gift_form legend {color:$dark-grey;}

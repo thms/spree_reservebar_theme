@@ -1,0 +1,6 @@
+<tr class="<%= cycle('', 'alt') %>">
+	<td><%= link_to variant.product.name, product_path(variant.product) %> <%= variant.options_text %></td>
+	<td><%= "#{line_item.quantity}" -%></td>
+	<td><%= number_to_currency(line_item.price * line_item.quantity) unless line_item.quantity.nil? %></td>
+    <%= item_form.hidden_field :quantity, :min => 0, :class => "line_item_quantity" %>
+</tr>
