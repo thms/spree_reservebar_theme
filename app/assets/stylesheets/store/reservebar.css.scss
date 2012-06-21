@@ -6,8 +6,8 @@ $blue: #63B8D6;
 $link_text_color:           #593d2b;
 $link_hover_color:			#D34C2F;
 
-$ff_base:        'Lato', sans-serif;
-$ff_serif:       'Crimson Text', serif;
+$ff_base:        'CartoGothic', sans-serif;
+$ff_serif:       'MrsEaves', serif;
 
 
 body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
@@ -59,7 +59,7 @@ div#top-menu > ul > li > ul > li {
 }
 /* add spacer in between top level list to make spacing equal */
 div#top-menu > ul > li {padding-right:0px;height:22px;}
-div#top-menu > ul > li:after {content:'';display:inline-block;width:22px;}
+div#top-menu > ul > li:after {content:'';display:inline-block;width:28px;}
 div#top-menu > ul > li:last-child:after {width:0px;}
 div#top-menu > ul > li:last-child {float:right;}
 
@@ -74,12 +74,15 @@ div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 #breadcrumbs li a {font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
 
 /* Footer */
-footer#footer {background-color:#e5e4e0;padding:4px;font-size:12px;height:58px;}
-div#footer-left ul, div#footer-right ul {list-style:none;margin:4px;height:14px;}
-div#footer-left ul li {float:left;padding-right:8px;}
-div#footer-right ul li {float:right;padding-left:8px;text-transform:uppercase;font-family:$ff_serif;}
-div#footer-right {float:right;width:600px;}
-footer#footer hr {margin:7px;height:0.2em;background-color:$dark-grey;border-color:$light-grey;width:98%;}
+footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;border:double;border-width:4px 0;}
+footer#footer ul {list-style:none;margin:23px 0;height:14px;}
+footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;}
+footer > ul > li:after {content:'';display:inline-block;width:33px;}
+footer > ul > li:last-child:after {width:0px;}
+footer > ul > li:last-child {float:right;}
+
+
+copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;font-size:14px;}
 
 
 
@@ -118,7 +121,7 @@ div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 /* autocomplete */
 
 /* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
-#keywords {z-index:100;}
+#keywords {position:relative;z-index:100;}
 
 /* minicart styling*/
 div#minicart {background-color:#eeeeee;z-index:200;}
@@ -158,7 +161,10 @@ table#wishlist a:hover, table#wishlist input[type="submit"]:hover {color:$link_h
 
 /* checkout forms */
 form.edit_spree_order .form-buttons {clear:both;margin-top:24px;}
-#checkout-summary {margin-top:34px;}
+#checkout-summary {margin-top:23px;}
 fieldset#shipping {position:relative;}
 fieldset#shipping .checkbox {position:absolute;top:15px;}
 #gift_form legend {color:$dark-grey;}
+
+/* alt table rows */
+table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {background-color:#efefef;}

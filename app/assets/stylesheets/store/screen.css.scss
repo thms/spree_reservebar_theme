@@ -22,14 +22,14 @@ $product_link_text_color:   #D34C2F;
 /*--------------------------------------*/
 /* Fonts import from remote
 /*--------------------------------------*/
-/*
+
 @font-face{ 
 	font-family: 'MrsEaves';
 	src: url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.eot');
 	src: url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.eot?#iefix') format('embedded-opentype'),
 	     url('/assets/fonts/mrseavrom-071211001EmigreWebOnly.woff') format('woff');
 }
-*/
+
 @import url(http://fonts.googleapis.com/css?family=Lato|Crimson+Text);
 
 /*
@@ -40,11 +40,14 @@ $product_link_text_color:   #D34C2F;
 	     url('/assets/fonts/frutiger.woff') format('woff');
 }
 */
+@font-face { font-family: CartoGothic; src: url('/assets/fonts/CartoGothicStd-Book.otf'); } 
+@font-face { font-family: CartoGothic; font-weight: bold; src: url('/assets/fonts/CartoGothicStd-Bold.otf'); }
+
 /*--------------------------------------*/
 /* Font families
 /*--------------------------------------*/
-$ff_base:        'Lato', sans-serif;
-$ff_serif:       'Crimson Text', serif;
+$ff_base:        'CartoGothic', sans-serif;
+$ff_serif:       'MrsEaves', serif;
 
 /*--------------------------------------
   | Font sizes
