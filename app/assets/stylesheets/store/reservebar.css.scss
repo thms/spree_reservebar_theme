@@ -17,7 +17,7 @@ body {background:url(/assets/background.jpg) no-repeat;min-width:980px;backgroun
 	-webkit-box-shadow: 0 0 16px 5px #444;
 	box-shadow: 0 0 16px 5px #444;
 }
-#wrapper {min-height:600px;}
+#wrapper {min-height:600px;margin-top:24px;}
 header {position:relative;height:120px;}
 
 h1, h3 {color:$product_link_text_color;font-family:$ff_serif;}
@@ -89,6 +89,7 @@ copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;fon
 /* Product details */
 #product-details span.price {font-size:72px;line-height:72px;display:block;}
 #product-details span.price:first-letter {font-size:40px;vertical-align:super;}
+#product-description p {padding:2px 0;}
 
 /* Hide similar items */
 #taxon-crumbs {display:none;}
