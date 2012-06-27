@@ -8,6 +8,6 @@
 	</span>
 </div>
 
-<%= display_bookmarks %>
+<%= display_bookmarks @product.name, product_url(@product), @product.images.count > 0 ? @product.images.first.attachment.url(:product) : "" %>
 
 <div>
