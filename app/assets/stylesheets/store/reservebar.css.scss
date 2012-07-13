@@ -5,6 +5,13 @@ $red: #D34C2F;
 $blue: #63B8D6;
 $link_text_color:           #593d2b;
 $link_hover_color:			#D34C2F;
+$button_background_color:   #ff3333;
+$button_background_hover_color:   #b50000;
+
+$product_background_color:  #FFFFFF;
+$product_title_text_color:  #D34C2F;
+$product_body_text_color:   #593d2b;
+$product_link_text_color:   #D34C2F;
 
 $ff_base:        'CartoGothic', sans-serif;
 $ff_serif:       'MrsEaves', serif;
@@ -87,8 +94,8 @@ copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;fon
 
 
 /* Product details */
-#product-details span.price {font-size:72px;line-height:72px;display:block;}
-#product-details span.price:first-letter {font-size:40px;vertical-align:super;}
+#product-details span.price {font-size:40px;line-height:40px;display:block;}
+#product-details span.price:first-letter {font-size:24px;vertical-align:super;}
 #product-description p {padding:2px 0;}
 
 /* Hide similar items */
@@ -164,6 +171,28 @@ form.edit_spree_order .form-buttons {clear:both;margin-top:24px;}
 fieldset#shipping {position:relative;}
 fieldset#shipping .checkbox {position:absolute;top:15px;}
 #gift_form legend {color:$dark-grey;}
+#add-to-cart-button {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
+#add-to-cart-buttont:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
 /* alt table rows */
 table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {background-color:#efefef;}
+
+
+/* product tiles */
+ul#products li .product-image {padding:5px; background-color:white;min-height:110px;border:none;}
+ul#products li .product-image:hover {border:none;}
+a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:14px; }
+a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
+a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
+
+
+
+/* hide a few bits and pieces for demo */
+div.ratings {display:none;}
+div.gift-options-available {display:none;}
+div#product-price h6 {display:none;}
+
+/* gift packaing mockup */
+#gift-packaging-mockup li {height:95px;line-height:95px;vertical-align:middle;float:left;width:280px;margin-left:10px;}
+#gift-packaging-mockup li img {vertical-align:middle;margin-right:8px;}
+#gift-packaging-mockup li input {margin-right:8px;}
