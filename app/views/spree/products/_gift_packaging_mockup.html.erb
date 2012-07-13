@@ -1,7 +1,9 @@
 <h4>Gift Packaging</h4>
 <ul id="gift-packaging-mockup">
 <% Spree::GiftPackage.all.each do |gift_package| %>
-	<li onclick="javascript:$('#gift-packaging-dialog_<%= gift_package.id -%>').dialog('open');"><input type='radio' name='gift-packaging-option' <%= gift_package.title.downcase.include?('suede') ? 'checked' : '' -%>><%= image_tag gift_package.image(:midi) -%> <%= gift_package.title -%> ($<%= gift_package.price -%>)</li>
+	<li onclick="javascript:$('#gift-packaging-dialog_<%= gift_package.id -%>').dialog('open');"><input type='radio' name='gift-packaging-option' <%= gift_package.title.downcase.include?('suede') ? 'checked' : '' -%>>
+	<%= image_tag gift_package.image(:midi) -%> 
+	<span style="display:inline-block;width:130px;line-height:1.2em;"<%= gift_package.title -%> ($<%= gift_package.price -%>)</li>
 <% end %>
 	<li><input type='radio' name='gift-packaging-option'>No Gift packaging</li>
 </ul>
