@@ -1,17 +1,17 @@
 $product_link_text_color:   #D34C2F;
 $light-grey: #d0c7c2;
 $dark-grey: #593d2b;
-$red: #D34C2F;
+$red: #C13828;
 $blue: #63B8D6;
 $link_text_color:           #593d2b;
-$link_hover_color:			#D34C2F;
-$button_background_color:   #ff3333;
-$button_background_hover_color:   #b50000;
+$link_hover_color:			#C13828;
+$button_background_color:   #C13828;
+$button_background_hover_color:   #B1291D;
 
 $product_background_color:  #FFFFFF;
-$product_title_text_color:  #D34C2F;
+$product_title_text_color:  #C13828;
 $product_body_text_color:   #593d2b;
-$product_link_text_color:   #D34C2F;
+$product_link_text_color:   #C13828;
 
 $ff_base:        'CartoGothic', sans-serif;
 $ff_serif:       'MrsEaves', serif;
@@ -27,7 +27,7 @@ body {background:url(/assets/background.jpg) no-repeat;min-width:980px;backgroun
 #wrapper {min-height:600px;margin-top:24px;}
 header {position:relative;height:120px;}
 
-h1, h3 {color:$product_link_text_color;font-family:$ff_serif;}
+h1, h3 {color:$product_link_text_color;font-family:$ff_serif;line-height:1.2em;}
 
 /* Navbar and logo */
 figure#logo {position:relative;top:15px;width:50%;height:50px;}
@@ -73,7 +73,7 @@ div#top-menu > ul > li:last-child {float:right;}
 div#top-menu ul ul ul {visibility:hidden;}
 // Mouse over first level:
 div#top-menu ul li:hover ul {visibility:visible;}
-div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:16px;}
+div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:18px;}
 div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 
 
@@ -172,7 +172,7 @@ fieldset#shipping {position:relative;}
 fieldset#shipping .checkbox {position:absolute;top:15px;}
 #gift_form legend {color:$dark-grey;}
 #add-to-cart-button {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
-#add-to-cart-buttont:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
+#add-to-cart-button:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
 /* alt table rows */
 table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {background-color:#efefef;}
@@ -181,7 +181,7 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 /* product tiles */
 ul#products li .product-image {padding:5px; background-color:white;min-height:110px;border:none;}
 ul#products li .product-image:hover {border:none;}
-a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:14px; }
+a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.2em; }
 a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
 a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
@@ -192,7 +192,7 @@ div.ratings {display:none;}
 div.gift-options-available {display:none;}
 div#product-price h6 {display:none;}
 
-/* gift packaing mockup */
+/* gift packaging mockup */
 #gift-packaging-mockup li {height:95px;line-height:95px;vertical-align:middle;float:left;width:280px;margin-left:10px;}
 #gift-packaging-mockup li img {vertical-align:middle;margin-right:8px;}
 #gift-packaging-mockup li input {margin-right:8px;}

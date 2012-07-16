@@ -19,7 +19,7 @@
 		<div style="float:left;min-height:110px;text-align:left;width:100px;">
 			<div style="height:50px;overflow-y:hidden;">
 	        	<%= link_to truncate(product.name, :length => 50), product, :class => 'product-tile-name', :itemprop => "name", :title => product.name %>
-				<div style="font-weight:normal;"><%= truncate(product.description, :length => 50) -%></div>
+				<div style="font-weight:normal;display:none;"><%= truncate(product.description, :length => 50) -%></div>
 			</div>
         	<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
 
