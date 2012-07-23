@@ -1,0 +1,41 @@
+<%
+  paginated_products = @searcher.products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h6 class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+
+<% if products.any? %>
+<ul id="products" class="inline product-listing" data-hook>
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+      <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+        <div class="product-image" style="float:left;max-width:60px;">
+          <%= link_to small_image(product, :itemprop => "name"), product %>
+        </div>
+		<div style="float:left;min-height:110px;text-align:left;width:100px;">
+			<div style="height:50px;overflow-y:hidden;">
+	        	<%= link_to truncate(product.name, :length => 50), product, :class => 'product-tile-name', :itemprop => "name", :title => product.name %>
+				<div style="font-weight:normal;display:none;"><%= truncate(product.description, :length => 50) -%></div>
+			</div>
+        	<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
+
+	        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
+	          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
+	          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart" %>
+	        <% end %>
+
+		</div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages)
+      params.delete(:search)
+      params.delete(:taxon)
+%><%= paginate paginated_products %><% end %>

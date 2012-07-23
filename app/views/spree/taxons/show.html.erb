@@ -1,10 +1,27 @@
-<h3 class="taxon-title"><%= accurate_title %></h3>
 
 <% content_for :sidebar do %>
-  <div data-hook="taxon_sidebar_navigation">
+  <div data-hook="taxon_sidebar_navigation" style="visibility:hidden;">
   	<%= render :partial => 'spree/shared/taxonomies' %>
     <%= render :partial => 'spree/shared/filters'  if @taxon.children.empty? %>
   </div>
+<% end %>
+
+<% unless @taxon.description.blank? %>
+	<div style="min-height:150px;">
+		<div style="float:left;width:48%;text-align:right;">
+			<%= image_tag @taxon.icon(:product) %>
+		</div>
+		<div style="float:left;width:48%;margin-left:24px;">
+			<h3><%= accurate_title %></h3>
+			<p><%=@taxon.description %></p>
+			<%= display_bookmarks @taxon.name, @taxon.permalink, @taxon.icon ? @taxon.icon.url(:normal) : "" %>
+			
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<hr />
+<% else %>
+	<h3 class="taxon-title"><%= accurate_title %></h3>
 <% end %>
 
 <% if @taxon.children.empty? || !params[:keywords].blank? %>

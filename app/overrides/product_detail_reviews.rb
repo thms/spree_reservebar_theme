@@ -7,11 +7,12 @@ Deface::Override.new(:virtual_path => "spree/products/show",
                      :partial => "spree/shared/shortrating",
                      :disabled => true)
 
+# Disabled for now, intention is that they stay on the site
 Deface::Override.new(:virtual_path => "spree/products/show",
                      :name => "converted_product_properties_767643482",
                      :insert_after => "[data-hook='product_recommendations']",
                      :sequence => {:after => "store_product_recommendations"},
                      :partial => "spree/shared/reviews_full",
-                     :disabled => false)
+                     :disabled => true)
 
 

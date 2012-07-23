@@ -1,3 +1,8 @@
+Bottle Size: 750ml<br />
+<% method = "ships_#{@product.shipping_category.name.downcase}_to".to_sym %>
+<% states = Spree::Retailer.all.map(&method).join(',').split(',').uniq.sort.to_sentence %>
+This product is only available for delivery to <%= states %><br />
+
 <% unless @product_properties.empty? %> 
 <% # combine multiple property values for the same property into one %>
 <% 
