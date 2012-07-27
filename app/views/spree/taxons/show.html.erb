@@ -1,8 +1,13 @@
 
 <% content_for :sidebar do %>
-  <div data-hook="taxon_sidebar_navigation" style="visibility:hidden;">
+  <div data-hook="taxon_sidebar_navigation">
+<!--
   	<%= render :partial => 'spree/shared/taxonomies' %>
     <%= render :partial => 'spree/shared/filters'  if @taxon.children.empty? %>
+-->
+  	<% if chunk = Spree::ContentChunk.where(:kind => @taxon.permalink).first %>
+  		<%= link_to image_tag(chunk.image), chunk.link %>
+	<% end %>
   </div>
 <% end %>
 
