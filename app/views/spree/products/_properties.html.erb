@@ -1,3 +1,4 @@
+<div style="clear:both;"></div>
 Bottle Size: 750ml<br />
 <% method = "ships_#{@product.shipping_category.name.downcase}_to".to_sym %>
 <% states = Spree::Retailer.all.map(&method).join(',').split(',').uniq.sort.to_sentence %>
