@@ -184,8 +184,8 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 
 
 /* product tiles */
-ul#products li .product-image {padding:5px; background-color:white;min-height:110px;border:none;}
-ul#products li .product-image:hover {border:none;}
+ul#products li .product-image {padding:5px;margin-right:3px;background-color:white;min-height:110px;border:1px solid #FFF;}
+ul#products li .product-image:hover {border:1px solid #EEE;;}
 ul#products li .product-image img {width:50px;height:100px;}
 .container .three.columns {width:165px;overflow:hidden;margin-left:5px;margin-right:5px;}
 a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.1em; font-weight:normal;}
