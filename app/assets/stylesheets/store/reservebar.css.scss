@@ -30,7 +30,7 @@ header {position:relative;height:120px;}
 h1, h3 {color:$product_link_text_color;font-family:$ff_serif;line-height:1.2em;}
 
 /* Navbar and logo */
-figure#logo {position:relative;top:15px;width:50%;height:50px;}
+figure#logo {position:relative;top:10px;width:50%;height:50px;}
 nav#top-nav-bar {float:right;margin:0;position:absolute;top:0px;right:0px;}
 nav#top-nav-bar ul li a {text-transform: none;font-size:12px;}
 
@@ -187,6 +187,7 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 ul#products li .product-image {padding:5px; background-color:white;min-height:110px;border:none;}
 ul#products li .product-image:hover {border:none;}
 ul#products li .product-image img {width:50px;height:100px;}
+.container .three.columns {width:165px;overflow:hidden;margin-left:5px;margin-right:5px;}
 a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.1em; font-weight:normal;}
 a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
 a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
