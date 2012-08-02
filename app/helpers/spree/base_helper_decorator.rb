@@ -17,12 +17,13 @@ Spree::BaseHelper.class_eval do
     content_tag :ul, :class => 'taxons-list' do
       menu = root_taxon.children.map do |taxon|
         css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
-        content_tag :li, :class => css_class do
-         link_to(taxon.name, seo_url(taxon)) +
+        content_tag :li, :class => "#{taxon.permalink} #{css_class}" do
+         #link_to(taxon.name, seo_url(taxon)) +
+         content_tag(:span, taxon.name) + 
          taxons_tree(taxon, current_taxon, max_level - 1)
         end
       end
-      menu << content_tag(:li, link_to(extra_items.first[0], extra_items.first[1]))
+      menu << content_tag(:li, link_to(extra_items.first[0], extra_items.first[1])) unless extra_items.empty?
       menu.join("\n").html_safe
     end
   end
