@@ -217,10 +217,10 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 
   input[type="submit"], input[type="button"],
   input[type= "reset"], button, a.button {
+
 /* ToDo: Asset url */
 	background: $button_background_color url("arrow.png") no-repeat right center;
 	padding:3px 24px 3px 10px;
-
 
     text-shadow: none;
     color: $layout_background_color;
@@ -888,7 +888,14 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   /*--------------------------------------*/
   #existing-customer, #new-customer, #forgot-password {
   	margin:40px auto;
-  	width:400px;
+  	width:290px;
+  }
+  
+  #existing-customer {
+  	float:left;
+  }
+  #new-customer {
+  	float:right;
   }
   
   #existing-customer, #new-customer, #forgot-password {
