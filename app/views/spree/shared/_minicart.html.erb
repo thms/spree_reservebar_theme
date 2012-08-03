@@ -11,34 +11,26 @@
 
   <% else %>
     <div data-hook="outside_minicart_form">
-      <%= form_for @minicart_order, :url => update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
+		<%= form_for @minicart_order, :url => update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
         <div data-hook="inside_minicart_form">
 
           <div data-hook="minicart_items" class="clearfix">
             <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
 			<table>
 				<tr>
-				<th>Item</th>
-				<th>Qty</th>
-				<th>Amount</th>
-			</tr>
-              <%= order_form.fields_for :line_items do |item_form| %>
-                <%= render :partial => 'spree/shared/minicart_line_items', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } %>
+					<th>Item</th>
+					<th>Qty</th>
+				</tr>
+				<%= order_form.fields_for :line_items do |item_form| %>
+                	<%= render :partial => 'spree/shared/minicart_line_items', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } %>
               <% end %>
             </table>
           </div>
-	      <div id="minicart-details" data-hook="minicart_details" class="clearfix">
-	        <p>
-	          <span><%= t(:subtotal) %>: <span class="order-total"><%= order_subtotal(@minicart_order) %></span></span>
-	        </p>
-	      </div>
-
-        <div id="minicart-footer" data-hook="minicart_footer" class="clearfix">
-          <%= link_to t("view_shopping_cart"), cart_path, :class => 'button' %>&nbsp;&nbsp;
-          <%= link_to t(:checkout), checkout_path, :class => 'button checkout primary', :id => 'checkout-link' %>
+          <div id="minicart-footer" data-hook="minicart_footer">
+          	<%= link_to t("view_shopping_cart"), cart_path, :class => 'button' %>
+          </div>
         </div>
-        </div>
-      <% end %>
+		<% end %>
     </div>
   <% end %>
 

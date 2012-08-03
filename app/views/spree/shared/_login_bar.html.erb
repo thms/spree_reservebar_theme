@@ -62,8 +62,8 @@
 		
 		$( "#login-dialog-form" ).dialog({
 			autoOpen: false,
-			height: 550,
-			width: 500,
+			height: 320,
+			width: 630,
 			modal: true,
 			title: ""
 		});
@@ -74,7 +74,7 @@
 			});
 	});
 	</script>
-	<div id="login-dialog-form" title="Login or Signup">
+	<div id="login-dialog-form" class="clearfix" title="Login or Signup">
 		<% if flash[:alert] %>
 			<div class="flash errors"><%= flash[:alert] %></div>
 		<% end %>
@@ -82,8 +82,8 @@
 		<% protocol = Rails.env.development? ? 'http' : 'https' %>
 		
 		<div id="existing-customer">
-			<h6>Returning Customer</h6>
-			<p>Welcome back to Reservebar. Please sign into your account below.</p>
+			<h6>Returning Member</h6>
+			<p>Welcome back to ReserveBar.</p>
 			<div data-hook="login">
 				<%= form_for :user, :url => spree.user_session_url(:protocol => protocol) do |f| %>
 					<div id="password-credentials">
@@ -112,7 +112,8 @@
 	
 		<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 		<div id="new-customer">
-			<h6><%= t(:new_customer) %></h6>
+			<h6>New Member</h6>
+			<p>Become a new member of ReserveBar</p>
 			<div data-hook="signup">
 				<%= form_for :user, :url => spree.user_registration_url(@user, :protocol => protocol) do |f| %>
 				  <div data-hook="signup_inside_form">

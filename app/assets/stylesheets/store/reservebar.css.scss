@@ -30,7 +30,7 @@ header {position:relative;height:120px;}
 h1, h3 {color:$product_link_text_color;font-family:$ff_serif;line-height:1.2em;}
 
 /* Navbar and logo */
-figure#logo {position:relative;top:15px;width:50%;height:50px;}
+figure#logo {position:relative;top:10px;width:50%;height:50px;}
 nav#top-nav-bar {float:right;margin:0;position:absolute;top:0px;right:0px;}
 nav#top-nav-bar ul li a {text-transform: none;font-size:12px;}
 
@@ -42,7 +42,7 @@ nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.pn
 div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
 div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
 div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
-div#top-menu > ul > li > a {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
+div#top-menu > ul > li > span {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
 div#top-menu > ul > li > ul {visibility:hidden;position:absolute;left:0px;padding:12px;font-size:12px;width:956px;}
 div#top-menu > ul > li > ul {
 	background-color:white;
@@ -65,15 +65,13 @@ div#top-menu > ul > li > ul > li {
 	column-break-inside: avoid;
 }
 /* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {padding-right:0px;height:22px;}
-div#top-menu > ul > li:after {content:'';display:inline-block;width:66px;}
-div#top-menu > ul > li:last-child:after {width:0px;}
+div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:75px;}
 div#top-menu > ul > li:last-child {float:right;}
 
 div#top-menu ul ul ul {visibility:hidden;}
 // Mouse over first level:
 div#top-menu ul li:hover ul {visibility:visible;}
-div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:18px;}
+div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;line-height:1.2em;}
 div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 
 
@@ -83,10 +81,8 @@ div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 /* Footer */
 footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;border:double;border-width:4px 0;}
 footer#footer ul {list-style:none;margin:23px 0;height:14px;}
-footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;}
-footer > ul > li:after {content:'';display:inline-block;width:33px;}
-footer > ul > li:last-child:after {width:0px;}
-footer > ul > li:last-child {float:right;}
+footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:26px;}
+footer#footer > ul > li:last-child {float:right;margin-right:0px;}
 
 
 copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;font-size:14px;}
@@ -131,6 +127,9 @@ div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* minicart styling*/
 div#minicart {background-color:#eeeeee;z-index:200;}
+div#minicart-footer {text-align:right;padding-right:12px;margin-top:5px;}
+div#minicart table {margin:0 auto;}
+div#minicart table th {text-align:center;}
 
 /* Modal dialogs */
 div.ui-dialog-titlebar {border:none;background:none;}
@@ -186,6 +185,8 @@ a.add-to-cart {background: $button_background_color url("cart-small-white.png") 
 a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
 
+ul#products li {border:solid #fff;border-width:1px 0px 1px 0px;padding:4px 0;}
+ul#products li:hover {border-color:#e8d8ce;}
 
 /* hide a few bits and pieces for demo */
 div.ratings {display:none;}
