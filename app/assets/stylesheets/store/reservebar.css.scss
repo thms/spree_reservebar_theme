@@ -40,7 +40,7 @@ nav#top-nav-bar ul li a {text-transform: none;font-size:12px;}
 nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.png") no-repeat left center;}
 
 /* top-menu */
-div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:200;margin-bottom:12px;clear:both;width:100%;text-align:center;}
+div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;z-index:100;margin-bottom:12px;clear:both;width:100%;text-align:center;}
 div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;z-index:200;}
 div#top-menu > ul.taxons-list {z-index:200;}
 div#top-menu > ul > li {font-size:16px;}
