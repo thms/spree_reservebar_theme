@@ -20,7 +20,7 @@
       <% properties.each do |key,value|
         css_class = cycle('even', 'odd') %>
         <tr class="<%= css_class %>">
-          <td><strong><%= key.pluralize %></strong></td>
+          <td><strong><%= key %></strong></td>
           <td><%= value.join(', ') %></td>
         </tr>
       <% end %>
