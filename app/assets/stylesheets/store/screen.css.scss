@@ -890,13 +890,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   	margin:40px auto;
   	width:290px;
   }
-  
-  #existing-customer {
-  	float:left;
-  }
-  #new-customer {
-  	float:right;
-  }
+  #existing-customer {float:left;}
+  #new-customer {float:right;}
   
   #existing-customer, #new-customer, #forgot-password {
     h6 {

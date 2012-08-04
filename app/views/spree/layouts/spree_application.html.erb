@@ -66,6 +66,14 @@
 
     <%= render :partial => 'spree/shared/google_analytics' %>
 
+<script type="text/javascript">
+	$(function(){
+		$("footer li:last-child").css("float","right");
+		$("footer li:last-child").css("margin-right","0px");
+		$("div#top-menu > ul > li:last-child").css("float", "right");
+		$("div#top-menu > ul > li:last-child").css("margin-right","0px");
+	});
+</script>
   </body>
 
 </html>
