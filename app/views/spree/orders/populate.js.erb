@@ -11,7 +11,4 @@ $("#minicart-inner").empty().append('<%= escape_javascript render(:partial => "s
 $("#minicart-dialog").dialog('open');
 
 // Sliding up minicart
-setTimeout(function () {
-  $("#minicart-dialog").dialog('close');
-},
-5000);
+setTimeout(function () { $("#minicart-dialog").dialog('close'); }, 5000);

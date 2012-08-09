@@ -40,11 +40,10 @@ nav#top-nav-bar ul li a {text-transform: none;font-size:12px;}
 nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.png") no-repeat left center;}
 
 /* top-menu */
-div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;z-index:100;margin-bottom:12px;clear:both;width:100%;text-align:center;}
-div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;z-index:200;}
-div#top-menu > ul.taxons-list {z-index:200;}
-div#top-menu > ul > li {font-size:16px;}
-div#top-menu > ul > li span {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;cursor: hand; cursor: pointer;} 
+div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
+div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
+div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
+div#top-menu > ul > li > span {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
 div#top-menu > ul > li > ul {visibility:hidden;position:absolute;left:0px;padding:12px;font-size:12px;width:956px;}
 div#top-menu > ul > li > ul.taxons-list {
 	background-color:white;
@@ -85,13 +84,13 @@ div#top-menu > ul > li > ul > li > ul > li {
 }
 
 /* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {display:inline;text-align:center;margin:0 30px;padding-right:0px;height:22px;}
-div#top-menu > ul > li > ul {text-align:left;}
+div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:75px;}
+div#top-menu > ul > li:last-child {float:right;}
 
 div#top-menu ul ul ul {visibility:hidden;}
 /* Mouse over first level:*/
 div#top-menu ul li:hover ul {visibility:visible;}
-div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;}
+div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;line-height:1.2em;}
 div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 
 
@@ -99,9 +98,10 @@ div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 #breadcrumbs li a {font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
 
 /* Footer */
-footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;width:100%;border:double;border-width:4px 0;text-align:center;}
-footer#footer ul {list-style:none;margin:23px 0;height:15px;overflow:hidden;text-align:center;}
-footer#footer ul li {text-transform:uppercase;font-family:$ff_serif;display:inline;margin:0 9px;line-height:15px;}
+footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;border:double;border-width:4px 0;}
+footer#footer ul {list-style:none;margin:23px 0;height:14px;}
+footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:26px;}
+footer#footer > ul > li:last-child {float:right;margin-right:0px;}
 
 div.copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;font-size:14px;}
 
@@ -147,7 +147,7 @@ div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* minicart styling*/
 div#minicart {background-color:#eeeeee;z-index:200;}
-div#minicart-footer {text-align: center;	margin-top: 5px;}
+div#minicart-footer {text-align:right;padding-right:12px;margin-top:5px;}
 div#minicart table {margin:0 auto;}
 div#minicart table th {text-align:center;}
 
@@ -207,6 +207,8 @@ a.add-to-cart {background: $button_background_color url("cart-small-white.png") 
 a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
 
+ul#products li {border:solid #fff;border-width:1px 0px 1px 0px;padding:4px 0;}
+ul#products li:hover {border-color:#e8d8ce;}
 
 /* hide a few bits and pieces for demo */
 div.ratings {display:none;}
@@ -217,5 +219,4 @@ div#product-price h6 {display:none;}
 #gift-packaging-mockup li {height:95px;line-height:95px;vertical-align:middle;float:left;width:280px;margin-left:10px;}
 #gift-packaging-mockup li img {vertical-align:middle;margin-right:8px;}
 #gift-packaging-mockup li input {margin-right:8px;}
-
-.full-column {width:940px;}
+#gift-packaging-mockup li:hover {cursor: hand; cursor: pointer;}
