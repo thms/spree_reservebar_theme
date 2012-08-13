@@ -74,7 +74,7 @@
 			});
 	});
 	</script>
-	<div id="login-dialog-form" class="clearfix" title="Login or Signup">
+	<div id="login-dialog-form" class="clearfix" title="Login or Register for New Membership">
 		<% if flash[:alert] %>
 			<div class="flash errors"><%= flash[:alert] %></div>
 		<% end %>
@@ -83,7 +83,7 @@
 		
 		<div id="existing-customer">
 			<h6>Returning Member</h6>
-			<p>Welcome back to ReserveBar.</p>
+			<p>ReserveBar welcomes you back</p>
 			<div data-hook="login">
 				<%= form_for :user, :url => spree.user_session_url(:protocol => protocol) do |f| %>
 					<div id="password-credentials">
@@ -113,7 +113,7 @@
 		<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 		<div id="new-customer">
 			<h6>New Member</h6>
-			<p>Become a new member of ReserveBar</p>
+			<p>Register for free membership in ReserveBar</p>
 			<div data-hook="signup">
 				<%= form_for :user, :url => spree.user_registration_url(@user, :protocol => protocol) do |f| %>
 				  <div data-hook="signup_inside_form">
@@ -134,7 +134,7 @@
 						</div>
 
 						<div data-hook="signup_below_password_fields"></div>
-				    <p><%= f.submit t(:create), :class => 'button primary' %></p>
+				    <p><%= f.submit t(:register), :class => 'button primary' %></p>
 				  </div>
 				<% end %>
 			</div>

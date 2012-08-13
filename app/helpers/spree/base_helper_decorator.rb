@@ -12,14 +12,23 @@ Spree::BaseHelper.class_eval do
     end
   end
   
+  # First level main menu, only called once, then uses standard taxon tree for the inner items
   def menu_taxons_tree(root_taxon, current_taxon, max_level = 1, extra_items = nil)
     return '' if max_level < 1 || root_taxon.children.empty?
     content_tag :ul, :class => 'taxons-list' do
       menu = root_taxon.children.map do |taxon|
         css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
+        # Disabling the top level menus breaks hover on iOS, so we need to keep them as links (at least for this type of device)
+        user_agent = UserAgent.parse(request.user_agent)
         content_tag :li, :class => "#{taxon.permalink} #{css_class}" do
-         content_tag(:span, taxon.name) +
-         taxons_tree(taxon, current_taxon, max_level - 1)
+        ##content_tag :li, :class => css_class do
+          if ['iPad', 'iPhone'].include? user_agent
+            link_to(taxon.name, seo_url(taxon)) +
+            taxons_tree(taxon, current_taxon, max_level - 1)
+          else
+            content_tag(:span, taxon.name) +
+            taxons_tree(taxon, current_taxon, max_level - 1)
+          end
         end
       end
       if extra_items
@@ -28,7 +37,6 @@ Spree::BaseHelper.class_eval do
       menu.join("\n").html_safe
     end
   end
-  
   
   def short_breadcrumbs(taxon, separator="&nbsp;&raquo;&nbsp;")
     return "" if current_page?("/") || taxon.nil?
