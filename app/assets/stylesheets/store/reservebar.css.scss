@@ -65,7 +65,10 @@ div#top-menu > ul > li > ul > li {
 	column-break-inside: avoid;
 }
 /* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:75px;}
+div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:80px;}
+@media only screen and (max-device-width: 1024px)  {
+	div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:75px;}
+}
 div#top-menu > ul > li:last-child {float:right;}
 
 div#top-menu ul ul ul {visibility:hidden;}
