@@ -1,2 +1,13 @@
+<div style="position:absolute;z-index:200;display:none;" id="menu-closer">
+	<a href='#'>Close Menu</a>
+</div>
 <%= menu_taxons_tree(Spree::Taxonomy.find_by_name('Type').root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
-
+<script type="text/javascript">
+if ( (navigator.userAgent.match(/iPhone/i)) 
+   || (navigator.userAgent.match(/iPod/i) ) 
+   || (navigator.userAgent.match(/iPad/i))) 
+{
+	$("div#top-menu > ul > li").hover(function () {$("#menu-closer").show();});
+	$("#menu-closer").click(function () {$("#menu-closer").hide();});
+}
+</script>
