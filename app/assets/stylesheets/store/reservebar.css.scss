@@ -64,6 +64,22 @@ div#top-menu > ul > li > ul > li {
 	-moz-column-break-inside: avoid;
 	column-break-inside: avoid;
 }
+/* special treatment for champagne - try and make the spacing even , rather than create columns */
+div#top-menu > ul > li.type\/champagne > ul {
+	-webkit-column-count: 0;
+	-moz-column-count: 0;
+	column-count: 0;
+}
+div#top-menu > ul > li.type\/champagne > ul > li {
+	float:left;
+	margin-right:123px;
+}
+div#top-menu > ul > li.type\/champagne > ul > li:last-child {
+	float:right;
+	margin-right:0px;
+}
+
+
 /* add spacer in between top level list to make spacing equal */
 div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:80px;}
 @media only screen and (max-device-width: 1024px)  {
