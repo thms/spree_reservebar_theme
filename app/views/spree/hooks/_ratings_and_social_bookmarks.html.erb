@@ -1,4 +1,6 @@
-<p>Bottle Size: 750ml</p>
+<% unless ['Non Shipping','Other Products'].include? @product.shipping_category.name %>
+	<p>Bottle Size: 750ml</p>
+<% end %>
 <div id="ratings_and_bookmarks">
 <% stars = @product.stars %>
 <% reviews_count = @product.reviews_count %>
