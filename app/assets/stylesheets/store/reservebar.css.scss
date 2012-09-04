@@ -201,7 +201,7 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 ul#products li .product-image {padding:5px;margin-right:3px;background-color:white;min-height:110px;border:1px solid #FFF;}
 ul#products li .product-image:hover {border:1px solid #EEE;;}
 a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.1em; font-weight:normal;}
-a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;padding:3px 22px 3px 8px;}
+a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;padding:3px 18px 3px 6px;}
 a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
 
 
