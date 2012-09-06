@@ -892,6 +892,9 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   }
   #existing-customer {float:left;}
   #new-customer {float:right;}
+  #signup #new-customer {float:left;}
+  #signup h6, #login h6 {font-size:13px;}
+  #signup p, #login p {font-size:13px;}
   
   #existing-customer, #new-customer, #forgot-password {
     h6 {

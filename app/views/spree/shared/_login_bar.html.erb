@@ -84,7 +84,7 @@
 		<% protocol = Rails.env.development? ? 'http' : 'https' %>
 
 		<div id="existing-customer">
-			<h6>Returning Member</h6>
+			<h6><%= t(:returning_member) %></h6>
 			<p>ReserveBar welcomes you back</p>
 			<div data-hook="login">
 				<%= form_for :user, :url => spree.user_session_url(:protocol => protocol) do |f| %>
@@ -114,7 +114,7 @@
 	
 		<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 		<div id="new-customer">
-			<h6>New Member</h6>
+			<h6><%= t(:new_member) %></h6>
 			<p>Register for free membership in ReserveBar</p>
 			<div data-hook="signup">
 				<%= form_for :user, :url => spree.user_registration_url(@user, :protocol => protocol) do |f| %>
