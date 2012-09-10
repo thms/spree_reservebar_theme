@@ -1,8 +1,10 @@
 <div style="clear:both;"></div>
 
-<% method = "ships_#{@product.shipping_category.name.downcase.gsub(' ','_')}_to".to_sym %>
-<% states = Spree::Retailer.all.map(&method).join(',').split(',').uniq.sort.to_sentence %>
-<!-- This product is only available for delivery to <%= states %><br /> -->
+<% unless @product.ships_to_all_states? %>
+	<br />
+	<i>This product is only available for delivery in the following states: <%= @product.ships_to_states %></i>
+	<br />
+<% end %>
 
 <% unless @product_properties.empty? %> 
 <% # combine multiple property values for the same property into one %>
