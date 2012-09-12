@@ -23,7 +23,7 @@ $(function() {
 <div id="minicart-dialog">
 	<h2>Thank You for Adding to Your Cart!</h2>
 	<div id="minicart-inner">
-		<%= render :partial => "spree/shared/minicart_inner", :locals => {:product => @product} %>
+		<%= render :partial => "spree/shared/minicart_inner", :locals => {:product => @product} if @product %>
 	</div>
 	<div style="margin:24px auto auto 160px;">
 		<%= link_to_function t(:continue_shopping), '$("#minicart-dialog").dialog("close")', :class => 'button large' %><br /><br />

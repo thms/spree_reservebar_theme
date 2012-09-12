@@ -1,0 +1,30 @@
+<style>
+	#bottle-limit-exceeded-dialog .ui-icon {display:inline;}
+	#bottle-limit-exceeded-dialog a.button {color:#fff;}
+</style>
+
+<script>
+$(function() {
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$("#bottle-limit-exceeded-dialog").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 500,
+		modal: true,
+		title: ""
+	});
+
+});
+</script>
+<div id="bottle-limit-exceeded-dialog">
+	<div>
+		<p>Thank you for trying to add products to your shopping cart. We appreciate your business; however,  we currently cannot accept an order that contains more than 12 bottles. </p>
+		<p>If you wish to purchase more than 12 bottles (e.g., more than one case of wine), please create separate orders, each of which must contain 12 or fewer bottles. We apologize for the inconvenience.</p>
+	</div>
+	<div style="margin:24px auto auto 160px;">
+		<%= link_to_function t(:continue_shopping), '$("#bottle-limit-exceeded-dialog").dialog("close")', :class => 'button large' %><br /><br />
+    	<%= link_to t(:view_shopping_cart), cart_path, :class => 'button large', :id => 'checkout-link' %>
+	</div>
+</div>
