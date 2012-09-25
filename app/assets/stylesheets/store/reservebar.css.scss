@@ -74,12 +74,14 @@ div#top-menu > ul > li.type\/champagne > ul {
 }
 div#top-menu > ul > li.type\/champagne > ul > li {
 	float:left;
-	margin-right:123px;
+	margin-right:122px;
 }
 div#top-menu > ul > li.type\/champagne > ul > li:last-child {
 	float:right;
 	margin-right:0px;
 }
+
+
 
 /* end of champagne treatment */
 
@@ -95,7 +97,7 @@ div#top-menu ul ul ul {visibility:hidden;}
 div#top-menu ul li:hover ul {visibility:visible;}
 div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;line-height:1.2em;}
 div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
-#menu-closer {position:absolute;right:1px;top:26px;font-size:14px;}
+#menu-closer {position:absolute;right:-8px;top:26px;font-size:14px;padding:4px;border-style:double;border-width:0 4px 4px 4px;border-color:black;background:white}
 
 
 /* Breadcrumbs */
@@ -223,3 +225,6 @@ div#product-price h6 {display:none;}
 #gift-packaging-mockup li img {vertical-align:middle;margin-right:8px;}
 #gift-packaging-mockup li input {margin-right:8px;}
 #gift-packaging-mockup li:hover {cursor: hand; cursor: pointer;}
+
+
+#checkout-legality {font-size:14px;font-weight:bold;}

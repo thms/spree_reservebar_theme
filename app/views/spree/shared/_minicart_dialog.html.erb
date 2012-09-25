@@ -20,7 +20,7 @@ $(function() {
 
 });
 </script>
-<div id="minicart-dialog">
+<div id="minicart-dialog" style="display:none;">
 	<h2>Thank You for Adding to Your Cart!</h2>
 	<div id="minicart-inner">
 		<%= render :partial => "spree/shared/minicart_inner", :locals => {:product => @product} if @product %>
