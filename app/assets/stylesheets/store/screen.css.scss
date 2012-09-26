@@ -439,6 +439,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     color: $layout_background_color;
     font-weight: bold;
     margin-bottom: 10px;
+	font-size: 14px;
 
     &.notice {
       background-color: $link_text_color;
