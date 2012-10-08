@@ -75,12 +75,14 @@ div#top-menu > ul > li.type\/champagne > ul {
 }
 div#top-menu > ul > li.type\/champagne > ul > li {
 	float:left;
-	margin-right:123px;
+	margin-right:122px;
 }
 div#top-menu > ul > li.type\/champagne > ul > li:last-child {
 	float:right;
 	margin-right:0px;
 }
+
+
 
 /* end of champagne treatment */
 
@@ -96,7 +98,7 @@ div#top-menu ul ul ul {visibility:hidden;}
 div#top-menu ul li:hover ul {visibility:visible;}
 div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;line-height:1.2em;}
 div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
-#menu-closer {position:absolute;right:1px;top:26px;font-size:14px;}
+#menu-closer {position:absolute;right:-8px;top:26px;font-size:14px;padding:4px;border-style:double;border-width:0 4px 4px 4px;border-color:black;background:white}
 
 
 /* Breadcrumbs */
@@ -202,7 +204,7 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 
 
 /* product tiles */
-ul#products li .product-image {padding:5px;margin-right:3px;background-color:white;min-height:110px;border:1px solid #FFF;}
+ul#products li .product-image {padding:4px;margin:0;background-color:white;min-height:110px;border:1px solid #FFF;}
 ul#products li .product-image:hover {border:1px solid #EEE;;}
 a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.1em; font-weight:normal;}
 a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;padding:3px 22px 3px 8px;}
@@ -224,3 +226,6 @@ div#product-price h6 {display:none;}
 #gift-packaging-mockup li img {vertical-align:middle;margin-right:8px;}
 #gift-packaging-mockup li input {margin-right:8px;}
 #gift-packaging-mockup li:hover {cursor: hand; cursor: pointer;}
+
+
+#checkout-legality {font-size:14px;font-weight:bold;}
