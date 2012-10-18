@@ -4,8 +4,6 @@
 <div style="float:left;margin-top:54px;width:240px;">
 	<h3><%= product.name %></h3>
 	<%= truncate product.description, :length => 160, :separator => ' ' %><br />
-    <% stars = product.stars %>
-    <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
 	<div class="price selling" itemprop="price"><%= number_to_currency product.price %></div>
 </div>
 <div class="clearfix"></div>
