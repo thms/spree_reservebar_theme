@@ -118,6 +118,7 @@ copyright {width:100%;text-align:center; font-family:$ff_serif;display:block;fon
 #product-details span.price {font-size:40px;line-height:40px;display:block;}
 #product-details span.price:first-letter {font-size:24px;vertical-align:super;}
 #product-description p {padding:2px 0;}
+#product-description i {font-size:15px;font-weight:bold;}
 
 /* Hide similar items */
 #taxon-crumbs {display:none;}
@@ -228,3 +229,5 @@ div#product-price h6 {display:none;}
 
 
 #checkout-legality {font-size:14px;font-weight:bold;}
+
+sub, sup {font-size:60%;}
