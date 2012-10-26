@@ -67,7 +67,6 @@ div#top-menu > ul > li > ul > li {
 }
 
 /* special treatment for champagne - try and make the spacing even , rather than create columns */
-
 div#top-menu > ul > li.type\/champagne > ul {
 	-webkit-column-count: 0;
 	-moz-column-count: 0;
@@ -75,21 +74,27 @@ div#top-menu > ul > li.type\/champagne > ul {
 }
 div#top-menu > ul > li.type\/champagne > ul > li {
 	float:left;
-	margin-right:122px;
+	/* margin-right:122px; */
+	margin-right:81px;
 }
+@media only screen and (max-device-width: 1024px)  {
+div#top-menu > ul > li.type\/champagne > ul > li {margin-right:79px;}
+}
+html.ie div#top-menu > ul > li.type\/champagne > ul > li {margin-right:77px;}
+
 div#top-menu > ul > li.type\/champagne > ul > li:last-child {
 	float:right;
 	margin-right:0px;
 }
-
-
+html.ie div#top-menu > ul > li.type\/champagne > ul > li:last-child {margin-right:0px;}
 
 /* end of champagne treatment */
 
 /* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:80px;}
+div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:70px;}
+/* adjust for iPad */
 @media only screen and (max-device-width: 1024px)  {
-	div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:75px;}
+	div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:65px;}
 }
 div#top-menu > ul > li:last-child {float:right;}
 
@@ -107,7 +112,13 @@ div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
 /* Footer */
 footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;border:double;border-width:4px 0;}
 footer#footer ul {list-style:none;margin:23px 0;height:14px;}
-footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:26px;}
+footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:33px;}
+html.ie9 footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:31px;}
+/* adjust for iPad */
+@media only screen and (max-device-width: 1024px)  {
+	footer#footer ul li {margin-right:31px;}
+}
+
 footer#footer > ul > li:last-child {float:right;margin-right:0px;}
 
 

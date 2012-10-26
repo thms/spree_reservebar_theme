@@ -18,7 +18,7 @@
         </div>
 		<div style="float:left;min-height:110px;text-align:left;width:100px;">
 			<div style="height:50px;overflow-y:hidden;">
-	      <%= link_to sanitize(product.tile_title, :tags => %w(sup)), product, :class => 'product-tile-name', :itemprop => "name", :title => product.tile_title %>
+	        	<%= link_to sanitize(product.tile_title, :tags => %w(sup)), product, :class => 'product-tile-name', :itemprop => "name", :title => product.tile_title %>
 				<div style="font-weight:normal;display:none;"><%= truncate(product.description, :length => 50) -%></div>
 			</div>
         	<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
