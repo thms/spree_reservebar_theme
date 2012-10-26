@@ -150,7 +150,8 @@ div#wrapper #taxonomies {display:none;}
 #product-images #main-image {border:none;}
 #product-images #main-image img {max-height:500px;}
 
-#cart-form {height:150px;}
+/* story: 38233375 remove the extra between the Add to Cart button and the Delivery Availability text */
+#cart-form {height:100px;}
 
 /* Properties */
 table#product-properties {margin-top:24px;border:none;}
