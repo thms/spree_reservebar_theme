@@ -162,7 +162,7 @@ div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:n
 div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
-#keywords {position:relative;z-index:100;}
+#keywords {position:relative;z-index:100;width:220px;}
 
 /* minicart styling*/
 div#minicart {background-color:#eeeeee;z-index:200;}
