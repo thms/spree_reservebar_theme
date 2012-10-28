@@ -276,6 +276,10 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     margin-top: -2px;
     vertical-align: bottom;
   }
+  a.button.continue {
+  	background: url("arrow-left.png") no-repeat scroll left center #C13828;
+  	padding: 3px 10px 3px 24px;
+  }
 
   /*--------------------------------------*/
   /* Footer
