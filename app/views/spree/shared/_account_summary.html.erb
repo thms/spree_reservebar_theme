@@ -1,0 +1,9 @@
+<h3><%= t(:email_address) %></h3>
+<table id="user-info">
+  <tbody>
+    <tr>
+      <td><%= @user.email %></td>
+      <td><%= link_to t(:edit), spree.edit_account_path, :class => 'button' %></td>
+    </tr>
+  </tbody>
+</table>
