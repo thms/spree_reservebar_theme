@@ -5,7 +5,7 @@
 		<li id="link-to-admin" data-hook><%= link_to "Admin", admin_path %></li>
 	<% end %>
 <% else %>
-  <li id="link-to-login"><%= link_to t(:login), "#", :id => "create-user" %></li>
+  <li id="link-to-login"><%= link_to "#{t(:login)} / #{t(:register)}", "#", :id => "create-user" %></li>
 	<style>
 		.ui-dialog .ui-dialog-content {padding-left:20px;padding-right:20px;}
 		#login-dialog-form #existing-customer, #login-dialog-form #new-customer, #login-dialog-form #forgot-password {margin:5px auto;}
