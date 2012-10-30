@@ -92,6 +92,10 @@ body {
   background-color: $layout_background_color;
 }
 
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget .button {
+	font-family: $ff_serif;
+}
+
 /* Line style */
 hr {
   border-color: lighten($body_text_color, 60);
