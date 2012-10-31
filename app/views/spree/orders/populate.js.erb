@@ -4,11 +4,19 @@ $("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>');
 // Refresh minicart line items
 $("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>');
 
-// Refresh minicart-dialog line items
+// Refresh minicart-dialog inner
 $("#minicart-inner").empty().append('<%= escape_javascript render(:partial => "spree/shared/minicart_inner", :locals => {:product => @variant.product}) %>');
 
-// Sliding down minicart
+// Refresh minicart-dialog inner if the dialog was not opened from a product page
+<% if @source == 'tile' %>
+	$("#minicart-gift-packaging").empty().append('<%= escape_javascript render(:partial => "spree/shared/minicart_gift_packaging", :locals => {:product => @variant.product}) %>');
+<% else %>
+	$("#minicart-gift-packaging").empty()
+<% end %>
+
+// Show minicart dialog
 $("#minicart-dialog").dialog('open');
 
-// Sliding up minicart
-setTimeout(function () { $("#minicart-dialog").dialog('close'); }, 5000);
+// Hide minicart again
+// Removed since adding gift-packaging from here.
+// setTimeout(function () { $("#minicart-dialog").dialog('close'); }, 5000);

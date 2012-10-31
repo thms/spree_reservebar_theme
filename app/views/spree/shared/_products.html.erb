@@ -28,6 +28,7 @@
 			<% else %>
 		        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
 		          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
+				  <%= hidden_field_tag "source", "tile" %>
 		          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart" %>
 				<% end %>
 	        <% end %>

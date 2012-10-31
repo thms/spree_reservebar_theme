@@ -12,8 +12,8 @@ $(function() {
 	
 	$("#minicart-dialog").dialog({
 		autoOpen: false,
-		height: 500,
-		width: 500,
+		height: 630,
+		width: 630,
 		modal: true,
 		title: ""
 	});
@@ -25,8 +25,15 @@ $(function() {
 	<div id="minicart-inner">
 		<%= render :partial => "spree/shared/minicart_inner", :locals => {:product => @product} if @product %>
 	</div>
+	<div id="minicart-gift-packaging">
+		<%= render :partial => "spree/shared/minicart_gift_packaging", :locals => {:product => @product} if @product %>
+	</div>
+	<div style="clear:both;"></div>
+	<div id="minicart-response"></div>
+	<div style="clear:both;"></div>
+	
 	<div style="margin:24px auto auto 160px;">
-		<%= link_to_function t(:continue_shopping), '$("#minicart-dialog").dialog("close")', :class => 'button large' %><br /><br />
-    	<%= link_to t(:view_shopping_cart), cart_path, :class => 'button large', :id => 'checkout-link' %>
+		<%= link_to_function t(:continue_shopping), '$("#minicart-dialog").dialog("close")', :class => 'button' %>&nbsp;&nbsp;
+    	<%= link_to t(:view_shopping_cart), cart_path, :class => 'button', :id => 'checkout-link' %>
 	</div>
 </div>
