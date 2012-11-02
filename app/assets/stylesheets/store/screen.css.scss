@@ -919,8 +919,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   }
 
   #user-info {
-    margin-bottom: 15px;
     padding: 10px;
+	border-collapse: inherit;
   }
 
   /*--------------------------------------*/

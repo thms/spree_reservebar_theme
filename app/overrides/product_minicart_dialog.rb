@@ -4,6 +4,12 @@ Deface::Override.new(:virtual_path => "spree/products/show",
                      :partial => "spree/shared/minicart_dialog",
                      :disabled => false)
 
+Deface::Override.new(:virtual_path => "spree/products/index",
+                    :name => "product_minicart_dialog_search",
+                    :insert_after => "[data-hook='search_results']",
+                    :partial => "spree/shared/minicart_dialog",
+                    :disabled => false)
+
 Deface::Override.new(:virtual_path => "spree/taxons/show",
                    :name => "taxon_products_mini_cart_dialog",
                    :insert_after => "[data-hook='taxon_products']",
@@ -15,3 +21,4 @@ Deface::Override.new(:virtual_path => "spree/taxons/show",
                    :insert_after => "[data-hook='taxon_children']",
                    :partial => "spree/shared/minicart_dialog",
                    :disabled => false)
+
