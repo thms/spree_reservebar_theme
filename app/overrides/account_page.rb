@@ -15,3 +15,7 @@ Deface::Override.new(:virtual_path => "spree/users/show",
                     :replace => "code[erb-loud]:contains('my_orders')",
                     :text => "<%= t(:order_history) %>",
                     :disabled => false)
+
+Deface::Override.new(:virtual_path => "spree/users/show",
+  :name => "add_wishlists_to_account_my_orders",
+  :disabled => true)
