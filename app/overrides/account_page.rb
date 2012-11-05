@@ -17,5 +17,5 @@ Deface::Override.new(:virtual_path => "spree/users/show",
                     :disabled => false)
 
 Deface::Override.new(:virtual_path => "spree/users/show",
-										 :name => "add_wishlists_to_account_my_orders",
-										 :disabled => true)
+  :name => "add_wishlists_to_account_my_orders",
+  :disabled => true)

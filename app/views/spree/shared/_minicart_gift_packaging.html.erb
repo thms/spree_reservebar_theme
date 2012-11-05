@@ -1,0 +1,19 @@
+<% if product.possible_gift_packages.count > 0 && product.shipping_category.name != 'Non Shipping' %>
+	<hr />
+	<%= form_for :order, :url => '/orders/change_gift_package', :html => {:id => 'gift_package-minicart'}, :remote => true  do |f| %>
+	<h4>Choose a Suitable Gift Package</h4>
+	<ul id="gift-packaging-mockup">
+		<% product.possible_gift_packages.each do |gift_package| %>
+			<li onclick="javascript:$(this).children('input:first').attr('checked',true);"><%= radio_button_tag "gift_package_id", gift_package.id, gift_package.default_for_product?(product) -%>
+			<%= image_tag gift_package.image(:midi) -%> 
+			<span style="display:inline-block;width:130px;line-height:1.2em;"><%= gift_package.title -%> (+<%= number_to_currency gift_package.price -%>)</span></li>
+		<% end %>
+		<li onclick="javascript:$(this).children('input:first').attr('checked',true);"><%= radio_button_tag "gift_package_id", 0 -%>No Gift packaging</li>
+	</ul>
+	<div style="clear:both;"></div>
+	<%= hidden_field_tag "product_id", product.id %>
+	<%= f.submit 'Add Gift Package' , :class => "button primary" %>  <span style="font-size:10px;">(The cost of Gift Packaging will be reflected in the Shopping Cart)</span>
+	<% end %>
+	<hr />
+<% end %>
+

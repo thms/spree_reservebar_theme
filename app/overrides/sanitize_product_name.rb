@@ -1,3 +1,4 @@
+                
 Deface::Override.new(:virtual_path => 'spree/orders/_line_item',
                     :name => 'sanitize_product_name_of_shopping_cart',
                     :replace_contents => "code[erb-loud]:contains('product_path')",
