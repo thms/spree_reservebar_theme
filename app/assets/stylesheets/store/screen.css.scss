@@ -902,7 +902,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   	width:290px;
   }
   #login #registration #existing-customer, #login #guest_checkout {margin-top:10px;}
-  #login #guest_checkout h6 {margin-bottom:38px;}
+  #login #guest_checkout h6 {margin-bottom:0px;}
   #existing-customer {float:left;}
   #forgot-password {float:left;}
   #new-customer {float:right;}
@@ -915,6 +915,15 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
       text-transform: uppercase;
     }
   }
+  
+  #existing-customer {
+    position:relative;
+    .options {
+    	position:absolute;
+    	bottom:10px;
+    	left:80px;
+    }
+  }
 
   #registration {
     h6 {
@@ -924,6 +933,13 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     #existing-customer {
       width: auto;
       text-align: left;
+    }
+    
+    .signup_link {
+    	margin-bottom: 18px;
+    	a.button {
+    		line-height:11px;
+    	}
     }
   }
 
