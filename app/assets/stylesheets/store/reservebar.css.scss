@@ -37,6 +37,7 @@ nav#top-nav-bar ul li a {text-transform: none;font-size:12px;}
 
 nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.png") no-repeat left center;}
 #search-bar {margin-top:32px;}
+#abFacebookConnect_0 {vertical-align:text-top}
 
 /* top-menu */
 div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
@@ -207,8 +208,8 @@ form.edit_spree_order .form-buttons {clear:both;margin-top:24px;}
 fieldset#shipping {position:relative;}
 fieldset#shipping .checkbox {position:absolute;top:15px;}
 #gift_form legend {color:$dark-grey;}
-#add-to-cart-button {background: $button_background_color url("cart-small-white.png") no-repeat right center;}
-#add-to-cart-button:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
+#add-to-cart-button {background-color: $button_background_color;background-image:none;text-align:center;font-size:18px;padding:7px 17px 3px;}	
+#add-to-cart-button:hover {background-color: $button_background_hover_color;}
 
 /* alt table rows */
 table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {background-color:#efefef;}
@@ -218,11 +219,8 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 ul#products li .product-image {padding:4px;margin:0;background-color:white;min-height:110px;border:1px solid #FFF;}
 ul#products li .product-image:hover {border:1px solid #EEE;;}
 a.product-tile-name {font-family:$ff_serif; color:$product_title_text_color;font-size:16px;line-height:1.1em; font-weight:normal;}
-a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;padding:3px 22px 3px 8px;}
-a.add-to-cart {background: $button_background_color url("cart-small-white.png") no-repeat right center;padding:3px 18px 3px 6px;}
-
-a.add-to-cart:hover {background: $button_background_hover_color url("cart-small-white.png") no-repeat right center;}
-
+a.add-to-cart {background-color: $button_background_color;background-image:none;text-align:center;padding:5px 6px 1px;font-size:13px;}
+a.add-to-cart:hover {background-color: $button_background_hover_color;background-image:none;}
 
 ul#products li {border:solid #fff;border-width:1px 0px 1px 0px;padding:4px 0;}
 ul#products li:hover {border-color:#e8d8ce;}
