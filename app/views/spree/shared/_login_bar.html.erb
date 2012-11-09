@@ -5,16 +5,16 @@
 		<li id="link-to-admin" data-hook><%= link_to "Admin", admin_path %></li>
 	<% end %>
 <% else %>
-  <li id="link-to-login"><%= link_to t(:login), "#", :id => "create-user" %></li>
+  <li id="link-to-login"><%= link_to t(:login) / #{t(:register)}, "#", :id => "create-user" %></li>
 	<style>
 		.ui-dialog .ui-dialog-content {padding-left:20px;padding-right:20px;}
-		#login-dialog-form #existing-customer, #login-dialog-form #new-customer, #login-dialog-form #forgot-password {margin:20px auto;}
+		#login-dialog-form #existing-customer, #login-dialog-form #new-customer, #login-dialog-form #forgot-password {margin:5px auto;}
 		#login-dialog-form #new-customer {width:310px;}
 		#login-dialog-form .ui-icon {display:inline;}
 		#login-dialog-form input.text { margin-bottom:12px; width:95%; padding: .4em; }
 		#login-dialog-form fieldset { padding:0; border:0; margin-top:25px; }
 		#login-dialog-form h1 { font-size: 1.2em; margin: .6em 0; }
-		#login-dialog-form p {}
+		#login-dialog-form p.comment {padding-top:0;}
 		#login-dialog-form div#users-contain { width: 450px; margin: 20px 0; }
 		#login-dialog-form div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
 		#login-dialog-form div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
@@ -85,7 +85,7 @@
 		
 		<div id="existing-customer">
 			<h6><%= t(:returning_member) %></h6>
-			<p>ReserveBar welcomes you back</p>
+			<p class="comment">ReserveBar welcomes you back</p>
 			<div data-hook="login">
 				<%= form_for :user, :url => spree.user_session_url(:protocol => protocol) do |f| %>
 					<div id="password-credentials">
@@ -115,7 +115,7 @@
 		<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 		<div id="new-customer">
 			<h6><%= t(:new_member) %></h6>
-			<p>Register for free membership in ReserveBar</p>
+			<p class="comment">Register for free membership in ReserveBar</p>
 			<div data-hook="signup">
 				<%= form_for :user, :url => spree.user_registration_url(@user, :protocol => protocol) do |f| %>
 				  <div data-hook="signup_inside_form">

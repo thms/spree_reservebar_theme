@@ -278,8 +278,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   }
   a.button.continue {
   	background: url("arrow-left.png") no-repeat scroll left center #C13828;
-  	padding-left:24px;
-  	padding-right:10px;
+  	padding: 3px 10px 3px 24px;
   }
 
 
