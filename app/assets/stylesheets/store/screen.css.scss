@@ -226,6 +226,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 	background: $button_background_color url("arrow.png") no-repeat right center;
 	padding:5px 24px 2px 10px;
 
+
     text-shadow: none;
     color: $layout_background_color;
     font-weight: bold;
@@ -282,9 +283,9 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   }
   a.button.continue {
   	background: url("arrow-left.png") no-repeat scroll left center #C13828;
-  	padding-left:24px;
-  	padding-right:10px;
+  	padding: 3px 10px 3px 24px;
   }
+
 
   /*--------------------------------------*/
   /* Footer
