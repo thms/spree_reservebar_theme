@@ -17,7 +17,7 @@
 			<%= image_tag @taxon.icon(:product) %>
 		</div>
 		<div style="float:left;width:48%;margin-left:24px;">
-			<h3><%= accurate_title %></h3>
+			<h3 class="taxon-title"><%= accurate_title %></h3>
 			<p><%=@taxon.description %></p>
 			<%= display_bookmarks @taxon.name, seo_url(@taxon), @taxon.icon ? @taxon.icon.url(:normal) : "" %>
 		</div>
