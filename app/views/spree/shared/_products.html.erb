@@ -21,11 +21,11 @@
 	        	<%= link_to sanitize(product.tile_title, :tags => %w(sup)), product, :class => 'product-tile-name', :itemprop => "name", :title => product.tile_title %>
 				<div style="font-weight:normal;display:none;"><%= truncate(product.description, :length => 50) -%></div>
 			</div>
-        	<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
 
 			<% if product.shipping_category.name == 'Non Shipping' %>
 				<%= link_to 'See Details', product %>
 			<% else %>
+        		<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
 		        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
 		          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
 				  <%= hidden_field_tag "source", "tile" %>
