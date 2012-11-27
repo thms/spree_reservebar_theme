@@ -5,7 +5,7 @@ Deface::Override.new(:virtual_path => "spree/products/show",
                      
 Deface::Override.new(:virtual_path => "spree/products/show",
                      :name => "properties_add_to_right",
-                     :insert_after => "[data-hook='cart_form']",
+                     :insert_bottom => "[data-hook='cart_form']",
                      :partial => "spree/products/properties",
                      :disabled => false)
 
