@@ -25,11 +25,11 @@
 	
     <div class="container">
 	<% unless (session[:age_gate] == 'passed' || request.path.include?('/pages/age_restriction')) %>
-		<% if Spree::Config[:use_age_gate_on_all_pages] || Spree::AgeGate.apply_for_path?(request.path) %>
+		<% if session[:enable_age_gate] && (Spree::Config[:use_age_gate_on_all_pages] || Spree::AgeGate.apply_for_path?(request.path)) %>
 			<%= render :partial => 'spree/age_gate/modal_form' %>
 		<% end %>
 	<% end %>
-	<!-- TODO: make depended on the landing page -->
+
 	
       <header id="header" class="row" data-hook>
       
