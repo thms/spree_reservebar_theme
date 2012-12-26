@@ -6,7 +6,7 @@
 	<br />
 <% end %>
 
-<% if @product.taxons.include?(Spree::Taxon.find_by_permalink("type/wine")) %>
+<% if @product.taxons.map(&:permalink).to_s.include?('type/wine') %>
 <br />
 <i>Please note that at times, specific vintages listed may not be currently offered by distributors in certain states due to new vintages having been recently introduced by that brand, seasonality or other factors.  In such event, we will substitute a comparable vintage (e.g., 2009 for 2008).</i>
 <br />

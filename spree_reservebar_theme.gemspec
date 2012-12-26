@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_reservebar_theme'
-  s.version     = '0.5.20'
+  s.version     = '0.5.21'
   s.summary     = 'Spree Commerce Theme for reservebar.com'
 
   s.author        = 'Thomas Boltze'
