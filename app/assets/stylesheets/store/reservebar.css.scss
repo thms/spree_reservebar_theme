@@ -180,6 +180,8 @@ div.ui-dialog .dialog-content {background-color:#f1f1f1;}
 fieldset#shipping_method label {float:none;display:block;}
 
 /* whishlist, gift packaging, whiskey of the month styling on product page */
+/* hide from here for now */
+#wishlist-form {display:none;}
 #wishlist-form a, .gift-options-available a, .whiskey-of-the-month a {vertical-align:top;height:34px;line-height:34px;}
 #wishlist-form span, .gift-options-available span, .whiskey-of-the-month span {height:34px;width:34px;display:inline-block;}
 #wishlist-form span {background:url(product-sprite.png) no-repeat 0 0;}
