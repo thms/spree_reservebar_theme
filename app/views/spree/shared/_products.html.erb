@@ -32,8 +32,8 @@
 		          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart", :id => "add_to_cart_sku_#{product.master.sku}" %>
 		<% if product.brand.brand_owner.title == 'Diageo' %>
 			<%= javascript_tag do %>
-					$("#add_to_cart_sku_<%= product.master.sku -%>").on('click', function() {
-							$(document).trigger('itemAddedToCart', ['<%= product.master.sku -%>', '<%= product.name -%>', '<%= product.brand.title -%>']);
+					$("#add_to_cart_sku_<%= product.master.sku -%>").on("click", function() {
+							$(document).trigger("itemAddedToCart", ["<%= product.master.sku -%>", "<%= product.name -%>", "<%= product.brand.title -%>"]);
 					});
 			<% end %>
 		<% end %>
