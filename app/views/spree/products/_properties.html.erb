@@ -4,9 +4,11 @@
 	<br />
 	<i>This product is only available for delivery in the following states: <%= @product.ships_to_states %></i>
 	<br />
+	<!--
 	<% if @product.ships_to_states.include?('TX') %>
 		(In Texas we can ship this product only to these counties: <%= Spree::Retailer.in_state(Spree::State.find_by_abbr('TX')).collect {|r| r.counties.map(&:name)}.join(',').split(',').to_sentence -%>.)
 	<% end %>
+	-->
 <% end %>
 
 <% if @product.taxons.map(&:permalink).to_s.include?('type/wine') %>
