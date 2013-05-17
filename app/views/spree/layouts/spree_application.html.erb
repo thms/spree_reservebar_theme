@@ -10,6 +10,8 @@
   <head data-hook="inside_head">
     <%= render :partial => 'spree/shared/head' %>
 
+    <%= render :partial => 'spree/shared/google_analytics_async' %>
+
   </head>
 
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
@@ -72,7 +74,17 @@
 
     </div>
 
-    <%= render :partial => 'spree/shared/google_analytics' %>
+	<% if Rails.env == 'development' %>
+		<div id="debug_info">
+			<% if current_order %>
+				<ul>
+					<li>Order#: <%= current_order.number %>
+					<li>Retailer#: <%= "#{current_order.retailer.name}, #{current_order.retailer.physical_address.state.abbr}" if current_order.retailer %>
+				</ul>
+			<% end %>
+		</div>
+	<% end %>
+
 
 <script type="text/javascript">
 	$(function(){
