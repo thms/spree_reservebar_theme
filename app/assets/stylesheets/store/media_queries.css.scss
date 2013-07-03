@@ -33,6 +33,17 @@
 /* #Media Queries
 ================================================== */
 
+
+/* Desktop only */
+@media screen and (min-width: 1200px) {
+	body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
+	.container {
+		-moz-box-shadow: 0 0 16px 5px #444;
+		-webkit-box-shadow: 0 0 16px 5px #444;
+		box-shadow: 0 0 16px 5px #444;
+	}
+	
+}
   /* Smaller than standard 960 (devices and browsers) */
   @media only screen and (max-width: 959px) {
 
