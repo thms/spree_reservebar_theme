@@ -26,17 +26,19 @@
 				<%= link_to 'See Details', product %>
 			<% else %>
         		<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
-		        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
-		          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
-				  <%= hidden_field_tag "source", "tile" %>
-		          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart", :id => "add_to_cart_sku_#{product.master.sku}" %>
-		<% if product.brand.brand_owner.title == 'Diageo' %>
-			<%= javascript_tag do %>
-					$("#add_to_cart_sku_<%= product.master.sku -%>").on("click", function() {
-							$(document).trigger("itemAddedToCart", ["<%= product.master.sku -%>", "<%= product.name -%>", "<%= product.brand.title -%>"]);
-					});
-			<% end %>
-		<% end %>
+ 				<% if product.has_stock? || Spree::Config[:allow_backorders] %>
+			        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
+			          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
+					  <%= hidden_field_tag "source", "tile" %>
+			          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart", :id => "add_to_cart_sku_#{product.master.sku}" %>
+						<% if product.brand.brand_owner.title == 'Diageo' %>
+							<%= javascript_tag do %>
+								$("#add_to_cart_sku_<%= product.master.sku -%>").on("click", function() {
+								$(document).trigger("itemAddedToCart", ["<%= product.master.sku -%>", "<%= product.name -%>", "<%= product.brand.title -%>"]);
+								});
+							<% end %>
+						<% end %>
+					<% end %>
 				<% end %>
 	        <% end %>
 
