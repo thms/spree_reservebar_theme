@@ -1,0 +1,65 @@
+/* Sushi's header.css */
+
+
+header {
+  height: auto;
+}
+.navbar {padding-top:40px;}
+
+/* Media queries start here */
+@media screen and (max-width: 768px) {
+
+  #top-menu {
+    display: none;
+  }
+
+  #hierarchybreadcrumb {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 67px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+
+  ul#nav-bar {
+    text-align: left;
+  }
+
+  #hierarchybreadcrumb {
+    top: 73px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-width: 767px) {
+
+  ul#nav-bar {
+    text-align: left;
+  }
+
+  #hierarchybreadcrumb {
+    top: 73px;
+  }
+
+}
+
+@media only screen and (max-width: 479px) {
+  ul#nav-bar {
+    text-align: left;
+  }
+
+  #hierarchybreadcrumb {
+    top: 60px;
+  }
+
+  #keywords {
+    width: 150px;
+  }
+
+  div#minicart {
+    padding: 5px;
+    right: 5px;
+  }
+
+}

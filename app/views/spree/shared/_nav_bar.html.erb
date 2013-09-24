@@ -1,13 +1,5 @@
 <% if store_menu? %>
   <li id="link-to-cart" data-hook><%= link_to_cart %></li>
 <% end %>
-<li id="search-bar" data-hook>
-
-<div class="fb-like" data-href="http://reservebar.com/" data-send="false" data-layout="button_count"  data-width="90" data-show-faces="true" style="display:inline-block;height:12px;"></div>
-
-<%= form_tag products_url, :method => :get, :style => "display:inline-block;" do %>
-  <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search), :style => "background:url('/assets/store/loupe.jpg') no-repeat right center;" %>
-<% end %>
-</li>
-
+<li id="search-bar" style="display:none;"></li>
 

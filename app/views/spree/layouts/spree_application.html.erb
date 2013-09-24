@@ -26,7 +26,7 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 	
 	
-    <div class="container">
+    <div id="containerWrapper" class="container">
 	<% unless (session[:age_gate] == 'passed' || request.path.include?('/pages/age_restriction')) %>
 		<% if session[:enable_age_gate] && (Spree::Config[:use_age_gate_on_all_pages] || Spree::AgeGate.apply_for_path?(request.path)) %>
 			<%= render :partial => 'spree/age_gate/modal_form' %>
@@ -39,6 +39,11 @@
         <figure id="logo" class="columns alpha six" data-hook>
           <%= logo %>
         </figure> 
+		<div id="search-box" data-hook>
+			<%= form_tag products_url, :method => :get, :style => "display:inline-block;" do %>
+		  	<%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search), :style => "background:url('/assets/store/loupe.jpg') no-repeat right center;" %>
+			<% end %>
+		</div>
 
         <nav id="top-nav-bar" class="columns omega ten">
           <ul id="nav-bar" class="inline" data-hook>
@@ -46,9 +51,17 @@
           </ul>
         </nav>
             
-		<div id="top-menu" data-hook>
-			<%= render 'spree/shared/top_menu' %>
-		</div>
+		<nav id="navbar" class="navbar navbar-static">
+		  <div class="navbar-header">
+		    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-js-navbar-collapse">
+		      <span class="sr-only">Menu</span>
+		    </button>
+		  </div>
+		
+			<div class="navbar-collapse bs-js-navbar-collapse collapse" style="height: 1px;" data-hook>
+				<%= render 'spree/shared/top_menu' %>
+			</div>
+		</nav>
       </header>
 
       <div id="wrapper" class="row" data-hook>
@@ -74,20 +87,11 @@
 
     </div>
 
-	<% if Rails.env == 'development' %>
-		<div id="debug_info">
-			<% if current_order %>
-				<ul>
-					<li>Order#: <%= current_order.number %>
-					<li>Retailer#: <%= "#{current_order.retailer.name}, #{current_order.retailer.physical_address.state.abbr}" if current_order.retailer %>
-				</ul>
-			<% end %>
-		</div>
-	<% end %>
 
-
+<!--[if lt IE 9 ]>
 <script type="text/javascript">
 	$(function(){
+		//IE <9 does not support last-child in CSS:
 		$("footer li:last-child").css("float","right");
 		$("footer li:last-child").css("margin-right","0px");
 		$("div#top-menu > ul > li:last-child").css("float", "right");
@@ -96,8 +100,14 @@
 		
 	});
 </script>
+<![endif]-->
 
 	<%= render :partial => 'spree/shared/columnizer_ie' %>
+	<script type="text/javascript" src="/assets/store/bootstrap.js"></script>
+	<script type="text/javascript">
+	  var touchClass = ('ontouchstart' in document.documentElement) ? 'touch' : 'no-touch';
+	  $('body').addClass(touchClass);
+	</script>
 	
   </body>
 

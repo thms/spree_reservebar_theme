@@ -33,30 +33,87 @@
 /* #Media Queries
 ================================================== */
 
+footer#footer {padding-top:20px;padding-bottom:10px;}
+footer#footer ul {margin:0;height:auto !important;}
+footer#footer ul li {padding-bottom:10px;}
+
+#search-box {margin-top:0px;position:absolute;right:0px;top:40px;}
+
+.home-promo {float:right;width:300px;height:350px;border-bottom:4px double #978F82;}
+.home-p1 {width:300px;height:144px;position:relative;margin-top:55px;}
+.home-p2 {background-repeat:no-repeat;position:relative;width:300px;height:146px;}
+.home-c1 {position:relative;float:left;width:310px;height:146px;margin-right:10px;border-bottom:4px double #978F82;}
+.home-c2 {position:relative;float:left;width:310px;height:146px;margin-right:10px;border-bottom:4px double #978F82;}
+.home-c3 {position:relative;float:left;width:300px;height:146px;border-bottom:4px double #978F82;}
+
+.home-gp {float:left;width:310px;height:146px;margin-right:10px;position:relative;}
+.home-dl {float:left;width:310px;height:146px;margin-right:10px;position:relative;}
+.home-nl {float:left;width:300px;height:146px;}
+
+/* Slider */
+.theme-default #slider {
+  margin:0 auto 0 auto;
+  width:630px; /* Make sure your images are the same size */
+  height:350px; /* Make sure your images are the same size */
+}
+.slider-wrapper {
+  margin:0;
+}
+#spree-slider {
+	float:left;width:630px;height:350px;border-bottom:4px double #978F82;
+}
+.theme-default .nivoSlider {
+	box-shadow:0 0 0 0 #4A4A4A;
+}
+
+.theme-default .nivo-controlNav {display:none;}
 
 /* Desktop only */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1025px) {
 	body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
 	.container {
 		-moz-box-shadow: 0 0 16px 5px #444;
 		-webkit-box-shadow: 0 0 16px 5px #444;
 		box-shadow: 0 0 16px 5px #444;
+		width:980px;
 	}
-	
+		
 }
+
+/* adjust for iPad */
+@media only screen and (device-height: 1024px) and (orientation : landscape) {
+	footer#footer ul li {margin-right:25px;}
+}
+
   /* Smaller than standard 960 (devices and browsers) */
   @media only screen and (max-width: 959px) {
 
+	footer#footer > ul > li:last-child {
+		float:left;
+		margin-right:0px;
+	}
+	footer#footer li {width:200px;margin-right:0px;}
+	#content #spree-slider {width:100%;}
+	div#slider.nivoSlider {width:100%;}
+	div#slider.nivoSlider a img {scale:contain;}
+	.home-promo {width:100%;margin-top:12px;height:146px;}
+	.home-p1 {float:left;margin-top:0px;}
+	.home-p2 {float:right;}
+	.home-c1, .home-c2, .home-c3 {width:33%;height:116px;margin-right:0px;background-size:100%;}
+	.home-c2 {margin-left:4px;}
+	.home-c3 {float:right;}
+	.home-gp, .home-dl, .home-nl {width:100%;}
   }
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
   @media only screen and (min-width: 768px) and (max-width: 959px) {
     .container {
+
       padding-left: 10px;
       width: 758px;
     }
     footer#footer {
-      width: 748px;
+      width: 758px;
     }
     p[data-hook="use_billing"] {
       margin-top: -15px;
@@ -69,7 +126,21 @@
     html {
       -webkit-text-size-adjust: none;
     }
+	.theme-default #slider {height:auto !important;max-height:350px;}
+	#content #spree-slider {height:auto !important;}
+	.container {width:95%;}
+	.home-p1, .home-p2 {max-width:50%;background-size:contain;}
+	.home-p1 {float:left;}
+	.home-p2 {float:right;}
+    footer#footer {
+      width: 640px;
+    }
 
+	.home-gp, .home-dl, .home-nl {float:none;width:100%;}
+
+	#search-box {top:113px;right:auto;left:0px;}
+	ul#nav-bar li {display:block;}
+	
     #order_details .steps-data div.columns, 
     #order_summary .steps-data div.columns {
       padding: 0;
@@ -88,9 +159,9 @@
         list-style: none !important;
       }
     }
-
+	nav#top-nav-bar {width:80px;}
     ul#nav-bar {
-      text-align: center;
+      text-align: right;
     }
 
     .steps-data div.columns {
@@ -122,27 +193,18 @@
     footer#footer {
       width: auto !important;
     }
-
+	#content {width:100%;}
     input, select {
       vertical-align: baseline !important;
     }
 
     figure#logo {
-      text-align: center;
+      text-align: left;
     }
 
     #link-to-login {
       display: block;
       text-align: center;
-    }
-
-    #search-bar {
-      display: block;
-      text-align: center;
-
-      select {
-        margin-bottom: 10px;
-      }
     }
 
     ul#products {
@@ -188,6 +250,13 @@
   /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
   @media only screen and (max-width: 479px) {
     
+	#content {width:100%;}
+	.home-promo {height:auto !important;}
+	.home-p1, .home-p2 {float:none;width:100%;max-width:100%;background-position-x:center;text-align:left;}
+	.home-c1, .home-c2, .home-c3 {max-width:100%;width:100%;background-size:contain;background-position-x:center;}
+	.home-gp, .home-dl, .home-nl {text-align:left;}
+	
+	footer#footer {width:auto !important;}
     .progress-steps li {
       padding: 0;
       margin: 0;
@@ -295,3 +364,5 @@
     }
         
   }
+
+/* Experimental or in progress */

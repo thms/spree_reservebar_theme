@@ -17,7 +17,7 @@ $ff_base:        'CartoGothic', sans-serif;
 $ff_serif:       'MrsEaves', serif;
 
 
-body {min-width:980px;}
+body {}
 .container {width:980px;height:auto;min-height:600px;margin:0 auto;padding:4px 16px 16px 16px;
 	position:relative;background-color:white;
 }
@@ -38,83 +38,16 @@ nav#top-nav-bar #link-to-cart {padding-left: 24px;background: url("cart-small.pn
 
 /* top-menu */
 div#top-menu {border-bottom:4px double $dark_grey;height:22px;position:absolute;top:108px;;z-index:100;margin-bottom:12px;clear:both;width:100%;}
-div#top-menu ul {list-style:none;margin-left:0;margin-right:0;top:22px;}
-div#top-menu > ul > li {float:left;padding-right:12px;font-size:16px;}
-div#top-menu > ul > li > a, div#top-menu > ul > li > span {text-transform:uppercase;letter-spacing:2px;font-family:$ff_serif;font-size:18px;} 
-div#top-menu > ul > li > ul {visibility:hidden;position:absolute;left:0px;padding:12px;font-size:12px;width:956px;}
-div#top-menu > ul > li > ul {
-	background-color:white;
-	-moz-box-shadow: 0px 4px 6px 1px rgba(100,100,100,0.5);
-	-webkit-box-shadow: 0px 4px 6px 1px rgba(100,100,100,0.5);
-	box-shadow: 0px 4px 6px 1px rgba(100,100,100,0.5);
-	border:4px double $dark-grey;
-	
-	-webkit-column-count: 5;
-	-moz-column-count: 5;
-	column-count: 5;
-	-webkit-column-gap: 20px;
-	-moz-column-gap: 20px;
-	column-gap: 20px;
-	
-}
-div#top-menu > ul > li > ul > li {
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
-}
-
-/* special treatment for champagne - try and make the spacing even , rather than create columns */
-div#top-menu > ul > li.type\/champagne > ul {
-	-webkit-column-count: 0;
-	-moz-column-count: 0;
-	column-count: 0;
-}
-div#top-menu > ul > li.type\/champagne > ul > li {
-	float:left;
-	/* margin-right:122px; */
-	margin-right:81px;
-}
-@media only screen and (max-device-width: 1024px)  {
-div#top-menu > ul > li.type\/champagne > ul > li {margin-right:79px;}
-}
-html.ie div#top-menu > ul > li.type\/champagne > ul > li {margin-right:77px;}
-
-div#top-menu > ul > li.type\/champagne > ul > li:last-child {
-	float:right;
-	margin-right:0px;
-}
-html.ie div#top-menu > ul > li.type\/champagne > ul > li:last-child {margin-right:0px;}
-
-/* end of champagne treatment */
-
-/* add spacer in between top level list to make spacing equal */
-div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:70px;}
-/* adjust for iPad */
-@media only screen and (max-device-width: 1024px)  {
-	div#top-menu > ul > li {padding-right:0px;height:22px;margin-right:65px;}
-}
-div#top-menu > ul > li:last-child {float:right;}
-
-div#top-menu ul ul ul {visibility:hidden;}
-/* Mouse over first level:*/
-div#top-menu ul li:hover ul {visibility:visible;}
-div#top-menu > ul > li > ul > li > a {color:$red;font-family:$ff_serif;font-size:20px;line-height:1.2em;}
-div#top-menu > ul > li > ul > li > ul > li > a {font-weight:bold;}
-#menu-closer {position:absolute;right:-8px;top:26px;font-size:14px;padding:4px;border-style:double;border-width:0 4px 4px 4px;border-color:black;background:white}
 
 
 /* Breadcrumbs */
 #breadcrumbs li a {font-family:$ff_serif;text-transform:uppercase;font-size:14px;}
 
 /* Footer */
-footer#footer {background-color:none;padding:0px;font-size:18px;height:58px;border:double;border-width:4px 0;}
+footer#footer {background-color:none;padding:0px;font-size:18px;border:double;border-width:4px 0;}
 footer#footer ul {list-style:none;margin:23px 0;height:14px;}
 footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:33px;}
 html.ie9 footer#footer ul li {float:left;text-transform:uppercase;font-family:$ff_serif;margin-right:31px;}
-/* adjust for iPad */
-@media only screen and (max-device-width: 1024px)  {
-	footer#footer ul li {margin-right:31px;}
-}
 
 footer#footer > ul > li:last-child {float:right;margin-right:0px;}
 
@@ -154,7 +87,7 @@ table#product-properties {margin-top:24px;border:none;}
 table#product-properties tr.odd, table#product-properties tr.even {background:none;}
 
 /* silder */
-div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:none;left:315px;}
+div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:none;left:50%;}
 div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */

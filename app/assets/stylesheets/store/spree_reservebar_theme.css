@@ -2,5 +2,7 @@
 	*= require store/screen
 	*= require store/reservebar
 	*= require store/media_queries
+	*= require store/menu
+	*= require store/bootstrap
 	
 */
