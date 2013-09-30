@@ -44,7 +44,7 @@
 .nav > li > a:focus {
   text-decoration: none;
   border-radius: 4px 4px 0 0;
-  color: #fff;
+  color: #593D2b;
 }
 .nav > li.disabled > a {
   color: #999999;
@@ -59,7 +59,7 @@
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #593d2b;
+  background-color: #593D2b;
   border-radius: 4px 4px 0 0;
   color: white;
 }
@@ -515,7 +515,7 @@ button.navbar-toggle .icon-bar + .icon-bar {
   margin-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  background: #593d2b;
+  background: #593D2B;
 }
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   border-bottom-right-radius: 0;
@@ -960,7 +960,7 @@ button.navbar-toggle .icon-bar + .icon-bar {
   -webkit-border-radius: 0 6px 6px 6px;
      -moz-border-radius: 0 6px 6px 6px;
           border-radius: 0 6px 6px 6px;
-          background: #593d2b;
+          background: #593D2b;
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
@@ -1018,7 +1018,7 @@ button.navbar-toggle .icon-bar + .icon-bar {
 .navbar {
   clear: both;
   font-family: "mrseavesmedium", serif;
-  border-bottom: 4px double #593d2b;
+  border-bottom: 4px double #593D2b;
   margin-top: 10px;
 }
 
@@ -1060,7 +1060,7 @@ button.navbar-toggle {
   .nav .open > a,
   .nav .open > a:hover,
   .nav .open > a:focus {
-    background-color: #593d2b;
+    background-color: #593D2b;
     border-radius: 4px 4px 0 0;
     color: white;
   }
@@ -1088,7 +1088,7 @@ button.navbar-toggle {
   }
 
   .navbar-nav .open .dropdown-menu {
-    background: #593d2b;
+    background: #593D2b;
   }
 
   .dropdown-submenu > a:after {
@@ -1158,7 +1158,7 @@ button.navbar-toggle {
   }
 
   .navbar-nav .open .dropdown-menu {
-    background: #593d2b;
+    background: #593D2b;
   }
 
   .dropdown-submenu > a:after {

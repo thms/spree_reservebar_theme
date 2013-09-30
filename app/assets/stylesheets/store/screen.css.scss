@@ -17,6 +17,8 @@ $product_title_text_color:  #C13828;
 $product_body_text_color:   #593d2b;
 $product_link_text_color:   #C13828;
 
+$nav_link_hover_color:		#FBB917;
+
 
 
 /*--------------------------------------*/
@@ -119,6 +121,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     }
   }
 
+   .navbar-nav a:hover {color: $nav_link_hover_color !important;}
   /*--------------------------------------*/
   /* Lists
   /*--------------------------------------*/

@@ -91,10 +91,10 @@ div#slider .nivo-caption {right:0;height:250px;width:50%;color:#333;background:n
 div#slider .nivo-controlNav {right:0;bottom:0;left:auto;}
 
 /* Search box - needs to have same zINdex as menu to allow autosuggest to be on top of the menu */
-#keywords {position:relative;z-index:100;width:220px;}
+#keywords {position:relative;z-index:2000;width:220px;}
 
 /* minicart styling*/
-div#minicart {background-color:#eeeeee;z-index:200;}
+div#minicart {background-color:#eeeeee;z-index:4000;}
 div#minicart-footer {text-align:right;padding-right:12px;margin-top:5px;}
 div#minicart table {margin:0 auto;}
 div#minicart table th {text-align:center;}
@@ -179,3 +179,6 @@ sub, sup {font-size:60%;}
 td[data-hook="cart_item_image"] {min-width:50px;}
 
 .product-not-active {margin:24px;font-weight:bold;}
+
+.taxon-image {float:left;margin-right:12px;}
+.taxon-text {float:none;width:100%;text-align:left;}

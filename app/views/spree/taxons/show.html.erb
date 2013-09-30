@@ -13,10 +13,10 @@
 
 <% unless @taxon.description.blank? %>
 	<div style="min-height:150px;">
-		<div style="float:left;width:48%;text-align:right;">
+		<div class="taxon-image">
 			<%= image_tag @taxon.icon(:product) %>
 		</div>
-		<div style="float:left;width:48%;margin-left:24px;">
+		<div class="taxon-text">
 			<h3 class="taxon-title"><%= accurate_title %></h3>
 			<br />
 			<%= @taxon.description.html_safe %>
