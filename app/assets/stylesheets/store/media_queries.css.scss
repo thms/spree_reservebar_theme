@@ -92,7 +92,8 @@ button.navbar-toggle {
 	border:none;
 	
 }
-
+.tile-left {float:left;max-width:50px;}
+.tile-right {float:left;min-height:110px;text-align:left;width:100px;}
 /* Desktop only */
 @media screen and (min-width: 1025px) {
 	body {background:url(/assets/background.jpg) no-repeat;min-width:980px;background-size:100%;}
@@ -132,14 +133,9 @@ button.navbar-toggle {
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
   @media only screen and (min-width: 768px) and (max-width: 959px) {
-    .container {
 
-      padding-left: 10px;
-      width: 758px;
-    }
-    footer#footer, #content {
-      width: 758px;
-    }
+	.container {width:98%;padding:4px 0px 0px 0px;}
+
 	aside#sidebar {display:none;}
 
     p[data-hook="use_billing"] {
@@ -157,6 +153,7 @@ button.navbar-toggle {
 	.theme-default #slider {height:auto !important;max-height:350px;}
 	#content #spree-slider {height:auto !important;}
 	.container {width:95%;}
+    
 	.home-p1, .home-p2 {max-width:50%;background-size:contain;}
 	.home-p1 {float:left;}
 	.home-p2 {float:right;}
@@ -284,7 +281,7 @@ button.navbar-toggle {
 
   /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
   @media only screen and (max-width: 479px) {
-    
+    .container {width:98%;padding:4px 0px 0px 0px;}
 	#content {width:100%;}
 	.home-promo {height:auto !important;}
 	.home-p1, .home-p2 {float:none;width:100%;max-width:100%;background-position-x:center;text-align:left;}
@@ -302,7 +299,7 @@ button.navbar-toggle {
         padding: 10px 20px;
       }
     }
-	.taxon-image img {width:75%;height:75%;}
+	.taxon-image img {width:80% !important;height:80% important;}
 	div.six.columns[data-hook="product_left_part"] {float:left;width:120px;}
 	div.columns[data-hook="product_right_part"] {text-align:left;}
 	#minicart-dialog {
@@ -394,16 +391,15 @@ button.navbar-toggle {
     ul#products {
 
       li {
-        width: 164px;
+        width: 155px;
         margin-right: 0px;
 
         &.secondary, &.omega {
           margin-right: 0;
         }
       }
-
-
     }
+	.tile-right {width:85px;}
 
     #content {
       text-align: center;
