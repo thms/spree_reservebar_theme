@@ -12,16 +12,21 @@ $(function() {
 	
 	$("#minicart-dialog").dialog({
 		autoOpen: false,
-		height: 630,
-		width: 630,
+		height: 'auto',
+		width: '80%',
+		maxWidth: 630,
 		modal: true,
-		title: ""
+		title: "",
+		open: function(event, ui){ 
+           fluidDialog(); // needed when autoOpen is set to true in this codepen
+        },
+        fluid: true,
+		zIndex: 3000
 	});
 
 });
-</script>
-<div id="minicart-dialog" style="display:none;">
-	<h2>Thank You for Adding to Your Cart!</h2>
+</script> 
+<div id="minicart-dialog" style="display:none;" title="Thank You for Adding to Your Cart!">
 	<div id="minicart-inner">
 		<%= render :partial => "spree/shared/minicart_inner", :locals => {:product => @product} if @product %>
 	</div>
@@ -32,8 +37,8 @@ $(function() {
 	<div id="minicart-response"></div>
 	<div class="clearfix"></div>
 	
-	<div style="margin:24px auto auto 160px;">
-		<%= link_to_function t(:continue_shopping), '$("#minicart-dialog").dialog("close")', :class => 'button' %>&nbsp;&nbsp;
+	<div class="buttons">
+		<%= link_to_function t(:continue_shopping), '$("#minicart-dialog").dialog("close")', :class => 'button' %>
     	<%= link_to t(:view_shopping_cart), cart_path, :class => 'button', :id => 'checkout-link' %>
 	</div>
 </div>

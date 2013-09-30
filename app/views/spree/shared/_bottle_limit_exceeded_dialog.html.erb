@@ -10,10 +10,15 @@ $(function() {
 	
 	$("#bottle-limit-exceeded-dialog").dialog({
 		autoOpen: false,
-		height: 500,
-		width: 500,
+		height: 'auto',
+		width: '80%',
+		maxWidth: 500,
 		modal: true,
-		title: ""
+		title: "",
+		open: function(event, ui){ 
+           fluidDialog(); // needed when autoOpen is set to true in this codepen
+        },
+        fluid: true
 	});
 
 });
@@ -23,8 +28,8 @@ $(function() {
 		<p>Thank you for trying to add products to your shopping cart. We appreciate your business; however,  we currently cannot accept an order that contains more than 12 bottles. </p>
 		<p>If you wish to purchase more than 12 bottles (e.g., more than one case of wine), please create separate orders, each of which must contain 12 or fewer bottles. We apologize for the inconvenience.</p>
 	</div>
-	<div style="margin:24px auto auto 160px;">
-		<%= link_to_function t(:continue_shopping), '$("#bottle-limit-exceeded-dialog").dialog("close")', :class => 'button large' %><br /><br />
+	<div class="buttons">
+		<%= link_to_function t(:continue_shopping), '$("#bottle-limit-exceeded-dialog").dialog("close")', :class => 'button large' %>
     	<%= link_to t(:view_shopping_cart), cart_path, :class => 'button large', :id => 'checkout-link' %>
 	</div>
 </div>

@@ -65,8 +65,33 @@ footer#footer ul li {padding-bottom:10px;}
 .theme-default .nivoSlider {
 	box-shadow:0 0 0 0 #4A4A4A;
 }
-
 .theme-default .nivo-controlNav {display:none;}
+
+/* Dialogs */
+.gift-packaging-dialog {
+	.product-image {width:100%;text-align:center;}
+	.product-image img {float:none;text-decoration:none;}	
+	.product-price {text-align:center;}
+	
+}
+.ui-dialog {
+	.buttons {margin:24px;text-align:center;}
+}
+#gift-packaging-mockup li {cursor: hand; cursor: pointer;}
+.gift-packaging-dialog .ui-icon {display:inline;}
+.gift-packaging-dialog a.button {color:#fff;}
+.gift-packaging-dialog div.price {font-size:36px;line-height:36px;color:#aaa;font-weight:bold}
+.gift-packaging-dialog div.price:first-letter {font-size:28px;vertical-align:super;}
+
+.minicart-product {float:left;margin-top:54px;width:240px;}
+
+
+button.navbar-toggle {
+	.icon-bar {background-color:#aaa;}
+	background:none;
+	border:none;
+	
+}
 
 /* Desktop only */
 @media screen and (min-width: 1025px) {
@@ -115,6 +140,8 @@ footer#footer ul li {padding-bottom:10px;}
     footer#footer, #content {
       width: 758px;
     }
+	aside#sidebar {display:none;}
+
     p[data-hook="use_billing"] {
       margin-top: -15px;
     } 
@@ -144,7 +171,7 @@ footer#footer ul li {padding-bottom:10px;}
 
 	.home-gp, .home-dl, .home-nl {float:none;width:100%;}
 
-	#search-box {top:113px;right:auto;left:0px;}
+	#search-box {top:104px;right:auto;left:0px;}
 	ul#nav-bar li {display:block;}
 	
 	
@@ -166,7 +193,7 @@ footer#footer ul li {padding-bottom:10px;}
         list-style: none !important;
       }
     }
-	nav#top-nav-bar {width:80px;}
+	nav#top-nav-bar {width:100px;}
     ul#nav-bar {
       text-align: right;
     }
@@ -278,7 +305,15 @@ footer#footer ul li {padding-bottom:10px;}
 	.taxon-image img {width:75%;height:75%;}
 	div.six.columns[data-hook="product_left_part"] {float:left;width:120px;}
 	div.columns[data-hook="product_right_part"] {text-align:left;}
+	#minicart-dialog {
+		.product-image {display:none;}
+		.minicart-product {margin-top:auto;}
+		
+	}
 
+	#login-dialog-form {
+		#existing-customer, new_customer {width:260px;}
+	}
     #shipping_method p label {
       float: none;
       display: block;

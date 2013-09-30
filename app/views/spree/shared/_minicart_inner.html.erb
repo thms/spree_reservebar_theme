@@ -1,7 +1,7 @@
 <div class="product-image" style="float:left;width:180px;margin-top:24px;">
 	<%= product_image(product, :itemprop => "name", :style => "float:right;text-decoration:none;" ) %>
 </div>
-<div style="float:left;margin-top:54px;width:240px;">
+<div class="minicart-product">
 	<h3><%= sanitize(product.name, :tags => %w(sup)) %></h3>
 	<%= truncate product.description, :length => 160, :separator => ' ' %><br />
 <!--
