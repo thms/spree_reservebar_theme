@@ -15,8 +15,10 @@ Spree::BaseHelper.class_eval do
   def menu_taxons_tree(root_taxon, current_taxon, max_level = 1, extra_items = nil)
     return '' if max_level < 1 || root_taxon.children.empty?
     content_tag :ul, :class => 'nav navbar-nav' do
-      root_taxon.children.map do |taxon|
-        content_tag :li, :class => 'dropdown' do
+      root_taxon.children.each_with_index.map do |taxon, index|
+        css_class = 'dropdown'
+        css_class += ' last' if index == root_taxon.children.count - 1
+        content_tag :li, :class => css_class do
           link_to(taxon.name, '#', :class => "dropdown-toggle", 'data-toggle' => "dropdown") +
           taxons_tree_responsive(taxon, current_taxon, max_level - 1)
         end
@@ -27,8 +29,9 @@ Spree::BaseHelper.class_eval do
   def taxons_tree_responsive(root_taxon, current_taxon, max_level = 1)
     return '' if max_level < 1 || root_taxon.children.empty?
     content_tag :ul, :class => 'dropdown-menu' do
-      root_taxon.children.map do |taxon|
+      root_taxon.children.each_with_index.map do |taxon, index|
         css_class = taxon.children.empty? ? '': 'dropdown-submenu'
+        css_class += ' last' if index == root_taxon.children.count - 1
         content_tag :li, :class => css_class do
           link_to(taxon.name, seo_url(taxon)) +
           taxons_tree_responsive(taxon, current_taxon, max_level - 1)

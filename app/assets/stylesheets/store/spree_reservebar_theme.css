@@ -4,5 +4,6 @@
 	*= require store/media_queries
 	*= require store/menu
 	*= require store/bootstrap
+	*= require store/colors
 	
 */
