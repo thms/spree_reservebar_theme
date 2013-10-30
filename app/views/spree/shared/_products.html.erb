@@ -19,7 +19,7 @@
 		<div class="tile-right">
 			<div style="height:50px;overflow-y:hidden;">
 	        	<%= link_to sanitize(product.tile_title, :tags => %w(sup)), product, :class => 'product-tile-name', :itemprop => "name", :title => product.tile_title %>
-				<div style="font-weight:normal;display:none;"><%= truncate(product.description, :length => 50) -%></div>
+				<div style="font-weight:normal;display:none;"><%= truncate(strip_tags(product.description), :length => 50) -%></div>
 			</div>
 
 			<% if product.shipping_category.name == 'Non Shipping' %>

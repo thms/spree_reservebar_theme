@@ -36,7 +36,7 @@
       <td>
         <h4><%= link_to product.name, product %></h4>
         <p><%= variant_options variant %></p>
-        <%= truncate(product.description, :length => 100, :omission => "...") %>
+        <%= truncate(strip_tags(product.description), :length => 100, :omission => "...") %>
       </td>
       <td>
         <%= variant.in_stock? ? t(:in_stock) : t(:out_of_stock) %>

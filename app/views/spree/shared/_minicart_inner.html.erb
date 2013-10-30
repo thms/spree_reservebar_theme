@@ -3,7 +3,10 @@
 </div>
 <div class="minicart-product">
 	<h3><%= sanitize(product.name, :tags => %w(sup)) %></h3>
-	<%= truncate product.description, :length => 160, :separator => ' ' %><br />
+	<div class="minicart-product-description">
+	<!-- <%= truncate product.description, :length => 160, :separator => ' ' %> -->
+	<%= product.description.html_safe %>
+	</div>
 <!--
     <% stars = product.stars %>
     <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>

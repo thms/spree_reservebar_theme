@@ -1,1 +1,4 @@
+<% cache( "top_menu-#{Spree::Taxon.find_by_name('Type').updated_at.to_i}") do %>
 <%= menu_taxons_tree(Spree::Taxonomy.find_by_name('Type').root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
+<% end %>
+
