@@ -14,7 +14,11 @@
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
       <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "product_tiles") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
         <div class="product-image tile-left">
-          <%= link_to small_image(product, :itemprop => "name"), product %>
+		  <% if product.has_variants? %>
+				<%= link_to small_image(product.variants.first, :itemprop => "name"), product %>
+		  <% else %>
+          		<%= link_to small_image(product, :itemprop => "name"), product %>
+		  <% end %>
         </div>
 		<div class="tile-right">
 			<div style="height:50px;overflow-y:hidden;">
@@ -28,13 +32,13 @@
         		<div class="price selling" itemprop="price" style="margin-bottom:6px;"><%= number_to_currency product.price %></div>
  				<% if product.has_stock? || Spree::Config[:allow_backorders] %>
 			        <%= form_for :order, :url => populate_orders_url, :remote => true do |f| %>
-			          <%= hidden_field_tag "variants[#{product.master.id}]", 1, :size => 3 %>
+			          <%= hidden_field_tag "variants[#{product.has_variants? ? product.variants.first.id : product.master.id}]", 1, :size => 3 %>
 					  <%= hidden_field_tag "source", "tile" %>
-			          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart", :id => "add_to_cart_sku_#{product.master.sku}" %>
+			          <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => "button add-to-cart", :id => "add_to_cart_sku_#{product.has_variants? ? product.variants.first.sku : product.master.sku}" %>
 						<% if product.brand.brand_owner.title == 'Diageo' %>
 							<%= javascript_tag do %>
-								$("#add_to_cart_sku_<%= product.master.sku -%>").on("click", function() {
-								$(document).trigger("itemAddedToCart", ["<%= product.master.sku -%>", "<%= product.name -%>", "<%= product.brand.title -%>"]);
+								$("#add_to_cart_sku_<%= product.has_variants? ? product.variants.first.sku : product.master.sku -%>").on("click", function() {
+								$(document).trigger("itemAddedToCart", ["<%= product.has_variants? ? product.variants.first.sku : product.master.sku -%>", "<%= product.name -%>", "<%= product.brand.title -%>"]);
 								});
 							<% end %>
 						<% end %>
