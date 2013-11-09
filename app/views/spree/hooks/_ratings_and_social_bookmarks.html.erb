@@ -11,6 +11,10 @@
 	</span>
 </div>
 
-<%= display_bookmarks @product.name, product_url(@product), @product.images.count > 0 ? @product.images.first.attachment.url(:product) : "" %>
+<% if @product.has_variants? %>
+	<%= display_bookmarks @product.name, product_url(@product), @product.variants.first.images.count > 0 ? @product.variants.first.images.first.attachment.url(:product) : "" %>
+<% else %>
+	<%= display_bookmarks @product.name, product_url(@product), @product.images.count > 0 ? @product.images.first.attachment.url(:product) : "" %>
+<% end %>
 
 <div>
