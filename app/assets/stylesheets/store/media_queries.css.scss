@@ -312,7 +312,7 @@ button.navbar-toggle {
 		.minicart-product {margin-top:auto;}
 		
 	}
-
+	#product-variants .variant-selector span {width:175px;margin-top:auto}
 	#login-dialog-form {
 		#existing-customer, new_customer {width:260px;}
 	}
@@ -328,7 +328,10 @@ button.navbar-toggle {
       margin-top: 0;
     }
 	#product-images #main-image {height:240px;}
-
+	[data-hook='product_price'] .add-to-cart {
+		#add-to-cart-button {font-size:14px;}
+		input {width:40px;}
+	} 
     table#cart-detail, table[data-hook="order_details"] {
       tbody {
         tr {
