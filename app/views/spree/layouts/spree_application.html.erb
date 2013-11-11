@@ -11,7 +11,9 @@
     <%= render :partial => 'spree/shared/head' %>
 
     <%= render :partial => 'spree/shared/google_analytics_async' %>
-
+	<%= twitter_card %>
+	<%= opengraph %>
+	<meta property=”og:site_name” content=”ReserveBar”/>
   </head>
 
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
