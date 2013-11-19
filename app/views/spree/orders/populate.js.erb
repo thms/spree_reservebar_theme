@@ -5,7 +5,11 @@ $("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>');
 $("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>');
 
 // Refresh minicart-dialog inner
+<% if @variant.is_master? %>
+$("#minicart-inner").empty().append('<%= escape_javascript render(:partial => "spree/shared/minicart_inner", :locals => {:product => @variant.product}) %>');
+<% else %>
 $("#minicart-inner").empty().append('<%= escape_javascript render(:partial => "spree/shared/minicart_inner", :locals => {:product => @variant}) %>');
+<% end %>
 
 // Refresh minicart-dialog inner if the dialog was not opened from a product page
 <% if @source == 'tile' %>

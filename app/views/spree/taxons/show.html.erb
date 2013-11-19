@@ -13,6 +13,8 @@
   </div>
 <% end %>
 
+<% cache(@taxon) do %>
+
 <% unless @taxon.description.blank? %>
 	<div style="min-height:150px;">
 		<div class="taxon-image">
@@ -40,6 +42,8 @@
   <div data-hook="taxon_children">
     <%= render :partial => 'taxon', :collection => @taxon.children %>
   </div>
+<% end %>
+
 <% end %>
 
 
